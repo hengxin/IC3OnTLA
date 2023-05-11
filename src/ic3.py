@@ -167,7 +167,7 @@ def FOL_IC3(spec):
         write2spec.del_the_last_one()
         write2spec.write_new_inv_to_spec(check_inv)
         write2spec.write_new_inv_to_spec("=========")
-        result = apalachecheck.apalache_check_inductive_relative("two_phase_commit","need_check_inv","inv_" + str(inv_index-1),"InitializeNode",0,state_index)
+        result = apalachecheck.apalache_check_inductive_relative("two_phase_commit","need_check_inv","inv_" + str(inv_index-1),"InitializeNode",1,state_index)
         write2spec.del_the_last_one()
         write2spec.del_the_last_one()
         write2spec.write_new_inv_to_spec("=========")
