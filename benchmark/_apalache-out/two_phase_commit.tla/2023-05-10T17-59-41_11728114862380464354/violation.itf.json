@@ -1,0 +1,86 @@
+{
+  "#meta": {
+    "format": "ITF",
+    "varTypes": {
+      "vote_yes": "Set(NODE)",
+      "abort_flag": "Bool",
+      "go_abort": "Set(NODE)",
+      "vote_no": "Set(NODE)",
+      "alive": "Set(NODE)",
+      "decide_abort": "Set(NODE)",
+      "decide_commit": "Set(NODE)",
+      "go_commit": "Set(NODE)"
+    },
+    "format-description": "https://apalache.informal.systems/docs/adr/015adr-trace.html",
+    "description": "Created by Apalache on Wed May 10 17:59:44 CST 2023"
+  },
+  "params": [
+    "Node"
+  ],
+  "vars": [
+    "vote_yes",
+    "abort_flag",
+    "go_abort",
+    "vote_no",
+    "alive",
+    "decide_abort",
+    "decide_commit",
+    "go_commit"
+  ],
+  "states": [
+    {
+      "#meta": {
+        "index": 0
+      },
+      "Node": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      },
+      "abort_flag": false,
+      "alive": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      },
+      "decide_abort": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      },
+      "decide_commit": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      },
+      "go_abort": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      },
+      "go_commit": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      },
+      "vote_no": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      },
+      "vote_yes": {
+        "#set": [
+          "n1_OF_NODE",
+          "n2_OF_NODE"
+        ]
+      }
+    }
+  ]
+}

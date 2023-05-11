@@ -1,0 +1,25 @@
+@!@!@STARTMSG 2262:0 @!@!@
+Created by Apalache on Sat May 06 13:21:20 CST 2023
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2110:1 @!@!@
+Invariant is violated.
+@!@!@ENDMSG 2110 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ ProcSet = { "p0_OF_PROCSET", "p1_OF_PROCSET" }
+/\ flag = SetAsFun({ <<"p0_OF_PROCSET", FALSE>>, <<"p1_OF_PROCSET", FALSE>> })
+/\ pc = SetAsFun({ <<"p0_OF_PROCSET", "cs">>, <<"p1_OF_PROCSET", "a4">> })
+/\ turn = "p0_OF_PROCSET"
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <Next>
+/\ ProcSet = { "p0_OF_PROCSET", "p1_OF_PROCSET" }
+/\ flag = SetAsFun({ <<"p0_OF_PROCSET", FALSE>>, <<"p1_OF_PROCSET", FALSE>> })
+/\ pc = SetAsFun({ <<"p0_OF_PROCSET", "cs">>, <<"p1_OF_PROCSET", "cs">> })
+/\ turn = "p0_OF_PROCSET"
+
+@!@!@ENDMSG 2217 @!@!@

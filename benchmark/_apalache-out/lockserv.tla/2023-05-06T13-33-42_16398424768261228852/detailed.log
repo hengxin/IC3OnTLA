@@ -1,0 +1,104 @@
+2023-05-06T13:33:42,993 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-06T13:33:43,024 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=true
+2023-05-06T13:33:43,308 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-06T13:33:43,923 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [OK]
+2023-05-06T13:33:43,924 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat
+2023-05-06T13:33:43,924 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Running Snowcat .::.
+2023-05-06T13:33:44,404 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Your types are purrfect!
+2023-05-06T13:33:44,404 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > All expressions are typed
+2023-05-06T13:33:44,439 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat [OK]
+2023-05-06T13:33:44,440 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #2: ConfigurationPass
+2023-05-06T13:33:44,444 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the initialization predicate to P
+2023-05-06T13:33:44,444 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the transition predicate to Next
+2023-05-06T13:33:44,444 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the constant initialization predicate to InitializeNode
+2023-05-06T13:33:44,445 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set an invariant to P
+2023-05-06T13:33:44,481 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #2: ConfigurationPass [OK]
+2023-05-06T13:33:44,481 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #3: DesugarerPass
+2023-05-06T13:33:44,481 [main] INFO  a.f.a.t.p.p.DesugarerPassImpl -   > Desugaring...
+2023-05-06T13:33:44,528 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #3: DesugarerPass [OK]
+2023-05-06T13:33:44,529 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #4: InlinePass
+2023-05-06T13:33:44,529 [main] INFO  a.f.a.t.p.p.InlinePassImpl - Leaving only relevant operators: InitializeNode, InitializeNodePrimed, Next, P, PPrimed
+2023-05-06T13:33:44,575 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #4: InlinePass [OK]
+2023-05-06T13:33:44,576 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #5: TemporalPass
+2023-05-06T13:33:44,576 [main] INFO  a.f.a.t.p.p.TemporalPassImpl -   > Rewriting temporal operators...
+2023-05-06T13:33:44,576 [main] INFO  a.f.a.t.p.p.TemporalPassImpl -   > No temporal property specified, nothing to encode
+2023-05-06T13:33:44,589 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #5: TemporalPass [OK]
+2023-05-06T13:33:44,589 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #6: InlinePass
+2023-05-06T13:33:44,589 [main] INFO  a.f.a.t.p.p.InlinePassImpl - Leaving only relevant operators: InitializeNode, InitializeNodePrimed, Next, P, PPrimed
+2023-05-06T13:33:44,606 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #6: InlinePass [OK]
+2023-05-06T13:33:44,606 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #7: PrimingPass
+2023-05-06T13:33:44,608 [main] INFO  a.f.a.t.p.a.PrimingPassImpl -   > Introducing InitializeNodePrimed for InitializeNode'
+2023-05-06T13:33:44,608 [main] INFO  a.f.a.t.p.a.PrimingPassImpl -   > Introducing PPrimed for P'
+2023-05-06T13:33:44,628 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #7: PrimingPass [OK]
+2023-05-06T13:33:44,629 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #8: VCGen
+2023-05-06T13:33:44,629 [main] INFO  a.f.a.t.b.p.VCGenPassImpl -   > Producing verification conditions from the invariant P
+2023-05-06T13:33:44,636 [main] INFO  a.f.a.t.b.VCGenerator -   > VCGen produced 6 verification condition(s)
+2023-05-06T13:33:44,658 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #8: VCGen [OK]
+2023-05-06T13:33:44,658 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #9: PreprocessingPass
+2023-05-06T13:33:44,658 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Before preprocessing: unique renaming
+2023-05-06T13:33:44,668 [main] INFO  a.f.a.t.p.p.PreproPassImpl -  > Applying standard transformations:
+2023-05-06T13:33:44,668 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > PrimePropagation
+2023-05-06T13:33:44,686 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Desugarer
+2023-05-06T13:33:44,708 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > UniqueRenamer
+2023-05-06T13:33:44,731 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Normalizer
+2023-05-06T13:33:44,753 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Keramelizer
+2023-05-06T13:33:44,776 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > After preprocessing: UniqueRenamer
+2023-05-06T13:33:44,807 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #9: PreprocessingPass [OK]
+2023-05-06T13:33:44,807 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #10: TransitionFinderPass
+2023-05-06T13:33:44,815 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - Adapted exception intercepted: 
+at.forsyte.apalache.tla.assignments.AssignmentException: lockserv.tla:78:6-78:10: holds_lock' is used before it is assigned. See https://apalache.informal.systems/docs/apalache/principles/assignments.html
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1(SmtFreeSymbolicTransitionExtractor.scala:33)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1$adapted(SmtFreeSymbolicTransitionExtractor.scala:23)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1(SmtFreeSymbolicTransitionExtractor.scala:35)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1$adapted(SmtFreeSymbolicTransitionExtractor.scala:23)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:575)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:573)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1(SmtFreeSymbolicTransitionExtractor.scala:35)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1$adapted(SmtFreeSymbolicTransitionExtractor.scala:23)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1(SmtFreeSymbolicTransitionExtractor.scala:35)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1$adapted(SmtFreeSymbolicTransitionExtractor.scala:23)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:575)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:573)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1(SmtFreeSymbolicTransitionExtractor.scala:35)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1$adapted(SmtFreeSymbolicTransitionExtractor.scala:23)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:575)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:573)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1(SmtFreeSymbolicTransitionExtractor.scala:35)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$throwOnUseBeforeAssignment$1$adapted(SmtFreeSymbolicTransitionExtractor.scala:23)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:575)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:573)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$getStrategyOptInternal$1(SmtFreeSymbolicTransitionExtractor.scala:152)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$getStrategyOptInternal$2(SmtFreeSymbolicTransitionExtractor.scala:103)
+	at scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)
+	at scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)
+	at scala.collection.immutable.List.foldLeft(List.scala:79)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.$anonfun$getStrategyOptInternal$1(SmtFreeSymbolicTransitionExtractor.scala:103)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.getStrategy(SmtFreeSymbolicTransitionExtractor.scala:165)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.apply(SmtFreeSymbolicTransitionExtractor.scala:187)
+	at at.forsyte.apalache.tla.passes.assignments.TransitionPassImpl.extractTransitions$1(TransitionPassImpl.scala:41)
+	at at.forsyte.apalache.tla.passes.assignments.TransitionPassImpl.execute(TransitionPassImpl.scala:50)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.exec(PassChainExecutor.scala:64)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.$anonfun$runPassOnModule$3(PassChainExecutor.scala:53)
+	at scala.util.Either.flatMap(Either.scala:352)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.$anonfun$runPassOnModule$1(PassChainExecutor.scala:51)
+	at scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)
+	at scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)
+	at scala.collection.immutable.List.foldLeft(List.scala:79)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.runOnPasses(PassChainExecutor.scala:44)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.run(PassChainExecutor.scala:34)
+	at at.forsyte.apalache.tla.tooling.opt.CheckCmd.run(CheckCmd.scala:132)
+	at at.forsyte.apalache.tla.Tool$.runCommand(Tool.scala:138)
+	at at.forsyte.apalache.tla.Tool$.run(Tool.scala:118)
+	at at.forsyte.apalache.tla.Tool$.main(Tool.scala:40)
+	at at.forsyte.apalache.tla.Tool.main(Tool.scala)
+2023-05-06T13:33:44,817 [main] INFO  a.f.a.t.b.c.CheckerExceptionAdapter - To understand the error, read the manual:
+2023-05-06T13:33:44,818 [main] INFO  a.f.a.t.b.c.CheckerExceptionAdapter -   [https://apalache.informal.systems/docs/apalache/principles/assignments.html]
+2023-05-06T13:33:44,818 [main] ERROR a.f.a.t.Tool$ - Assignment error: lockserv.tla:78:6-78:10: holds_lock' is used before it is assigned. See https://apalache.informal.systems/docs/apalache/principles/assignments.html
+2023-05-06T13:33:44,819 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  1 sec
+2023-05-06T13:33:44,819 [main] INFO  a.f.a.t.Tool$ - Total time: 1.822 sec

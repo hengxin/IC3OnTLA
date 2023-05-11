@@ -1,0 +1,15 @@
+2023-05-10T17:32:57,676 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-10T17:32:57,709 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=true
+2023-05-10T17:32:57,937 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-10T17:32:58,112 [main] ERROR a.f.a.t.p.i.SanyParserPassImpl - Parsing error: *** Errors: 1
+
+line 154, col 16 to line 154, col 21 of module TwoPhaseTyped
+
+Unknown operator: `TypeOK'.
+
+
+
+2023-05-10T17:32:58,147 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [FAIL]
+2023-05-10T17:32:58,148 [main] INFO  a.f.a.t.Tool$ - Checker has found an error
+2023-05-10T17:32:58,148 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  0 sec
+2023-05-10T17:32:58,148 [main] INFO  a.f.a.t.Tool$ - Total time: 0.468 sec

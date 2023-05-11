@@ -1,0 +1,15 @@
+2023-05-05T23:45:32,163 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-05T23:45:32,194 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=false
+2023-05-05T23:45:32,442 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-05T23:45:32,577 [main] ERROR a.f.a.t.p.i.SanyParserPassImpl - Parsing error: *** Abort messages: 1
+
+In module TCommit
+
+Could not parse module TCommit from file /Users/fruitfighter/Desktop/IC3onTLA+/benchmark/TCommit.tla
+
+
+
+2023-05-05T23:45:32,601 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [FAIL]
+2023-05-05T23:45:32,602 [main] INFO  a.f.a.t.Tool$ - Checker has found an error
+2023-05-05T23:45:32,602 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  0 sec
+2023-05-05T23:45:32,602 [main] INFO  a.f.a.t.Tool$ - Total time: 0.436 sec

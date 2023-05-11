@@ -1,0 +1,97 @@
+2023-05-10T17:49:31,015 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-10T17:49:31,050 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=true
+2023-05-10T17:49:31,377 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-10T17:49:32,062 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [OK]
+2023-05-10T17:49:32,063 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat
+2023-05-10T17:49:32,063 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Running Snowcat .::.
+2023-05-10T17:49:32,624 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Your types are purrfect!
+2023-05-10T17:49:32,625 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > All expressions are typed
+2023-05-10T17:49:32,677 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat [OK]
+2023-05-10T17:49:32,678 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #2: ConfigurationPass
+2023-05-10T17:49:32,685 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the initialization predicate to Inv
+2023-05-10T17:49:32,686 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the transition predicate to Next
+2023-05-10T17:49:32,686 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the constant initialization predicate to InitializeNODE
+2023-05-10T17:49:32,687 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set an invariant to P
+2023-05-10T17:49:32,732 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #2: ConfigurationPass [OK]
+2023-05-10T17:49:32,732 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #3: DesugarerPass
+2023-05-10T17:49:32,732 [main] INFO  a.f.a.t.p.p.DesugarerPassImpl -   > Desugaring...
+2023-05-10T17:49:32,791 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #3: DesugarerPass [OK]
+2023-05-10T17:49:32,791 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #4: InlinePass
+2023-05-10T17:49:32,792 [main] INFO  a.f.a.t.p.p.InlinePassImpl - Leaving only relevant operators: InitializeNODE, InitializeNODEPrimed, Inv, InvPrimed, Next, P
+2023-05-10T17:49:32,860 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #4: InlinePass [OK]
+2023-05-10T17:49:32,860 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #5: TemporalPass
+2023-05-10T17:49:32,861 [main] INFO  a.f.a.t.p.p.TemporalPassImpl -   > Rewriting temporal operators...
+2023-05-10T17:49:32,861 [main] INFO  a.f.a.t.p.p.TemporalPassImpl -   > No temporal property specified, nothing to encode
+2023-05-10T17:49:32,889 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #5: TemporalPass [OK]
+2023-05-10T17:49:32,889 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #6: InlinePass
+2023-05-10T17:49:32,889 [main] INFO  a.f.a.t.p.p.InlinePassImpl - Leaving only relevant operators: InitializeNODE, InitializeNODEPrimed, Inv, InvPrimed, Next, P
+2023-05-10T17:49:32,914 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #6: InlinePass [OK]
+2023-05-10T17:49:32,914 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #7: PrimingPass
+2023-05-10T17:49:32,916 [main] INFO  a.f.a.t.p.a.PrimingPassImpl -   > Introducing InitializeNODEPrimed for InitializeNODE'
+2023-05-10T17:49:32,917 [main] INFO  a.f.a.t.p.a.PrimingPassImpl -   > Introducing InvPrimed for Inv'
+2023-05-10T17:49:32,939 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #7: PrimingPass [OK]
+2023-05-10T17:49:32,939 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #8: VCGen
+2023-05-10T17:49:32,940 [main] INFO  a.f.a.t.b.p.VCGenPassImpl -   > Producing verification conditions from the invariant P
+2023-05-10T17:49:32,948 [main] INFO  a.f.a.t.b.VCGenerator -   > VCGen produced 11 verification condition(s)
+2023-05-10T17:49:32,991 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #8: VCGen [OK]
+2023-05-10T17:49:32,992 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #9: PreprocessingPass
+2023-05-10T17:49:32,992 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Before preprocessing: unique renaming
+2023-05-10T17:49:33,003 [main] INFO  a.f.a.t.p.p.PreproPassImpl -  > Applying standard transformations:
+2023-05-10T17:49:33,004 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > PrimePropagation
+2023-05-10T17:49:33,043 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Desugarer
+2023-05-10T17:49:33,084 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > UniqueRenamer
+2023-05-10T17:49:33,136 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Normalizer
+2023-05-10T17:49:33,195 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Keramelizer
+2023-05-10T17:49:33,247 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > After preprocessing: UniqueRenamer
+2023-05-10T17:49:33,292 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #9: PreprocessingPass [OK]
+2023-05-10T17:49:33,293 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #10: TransitionFinderPass
+2023-05-10T17:49:33,312 [main] INFO  a.f.a.t.p.a.TransitionPassImpl -   > Found 1 initializing transitions
+2023-05-10T17:49:33,324 [main] INFO  a.f.a.t.p.a.TransitionPassImpl -   > Found 7 transitions
+2023-05-10T17:49:33,325 [main] INFO  a.f.a.t.p.a.TransitionPassImpl -   > Found constant initializer InitializeNODE
+2023-05-10T17:49:33,679 [main] INFO  a.f.a.t.p.a.TransitionPassImpl -   > Applying unique renaming
+2023-05-10T17:49:33,714 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #10: TransitionFinderPass [OK]
+2023-05-10T17:49:33,714 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #11: OptimizationPass
+2023-05-10T17:49:33,724 [main] INFO  a.f.a.t.p.p.OptPassImpl -  > Applying optimizations:
+2023-05-10T17:49:33,724 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > ConstSimplifier
+2023-05-10T17:49:33,731 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > ExprOptimizer
+2023-05-10T17:49:33,734 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > SetMembershipSimplifier
+2023-05-10T17:49:33,736 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > ConstSimplifier
+2023-05-10T17:49:33,763 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #11: OptimizationPass [OK]
+2023-05-10T17:49:33,763 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #12: AnalysisPass
+2023-05-10T17:49:33,767 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -  > Marking skolemizable existentials and sets to be expanded...
+2023-05-10T17:49:33,768 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Skolemization
+2023-05-10T17:49:33,769 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Expansion
+2023-05-10T17:49:33,771 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Remove unused let-in defs
+2023-05-10T17:49:33,775 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -  > Running analyzers...
+2023-05-10T17:49:33,800 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Introduced expression grades
+2023-05-10T17:49:33,800 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #12: AnalysisPass [OK]
+2023-05-10T17:49:33,800 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #13: BoundedChecker
+2023-05-10T17:49:33,820 [main] DEBUG a.f.a.t.b.s.Z3SolverContext - Creating Z3 solver context 0
+2023-05-10T17:49:34,092 [main] DEBUG a.f.a.t.b.t.TransitionExecutorImpl - Initializing CONSTANTS
+2023-05-10T17:49:34,143 [main] DEBUG a.f.a.t.b.t.TransitionExecutorImpl - Step #0, transition #0
+2023-05-10T17:49:34,143 [main] DEBUG a.f.a.t.b.t.TransitionExecutorImpl - Translating to SMT
+2023-05-10T17:49:34,179 [main] DEBUG a.f.a.t.b.SeqModelChecker - Step 0: Transition #0. Is it enabled?
+2023-05-10T17:49:34,181 [main] DEBUG a.f.a.t.b.SeqModelChecker - Step 0: Transition #0 is enabled
+2023-05-10T17:49:34,181 [main] INFO  a.f.a.t.b.SeqModelChecker - State 0: Checking 11 state invariants
+2023-05-10T17:49:34,182 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 0
+2023-05-10T17:49:34,188 [main] INFO  a.f.a.t.b.SeqModelChecker - State 0: state invariant 0 holds.
+2023-05-10T17:49:34,191 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 1
+2023-05-10T17:49:34,195 [main] INFO  a.f.a.t.b.SeqModelChecker - State 0: state invariant 1 holds.
+2023-05-10T17:49:34,196 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 2
+2023-05-10T17:49:34,296 [main] INFO  a.f.a.t.b.DumpFilesModelCheckerListener$ - Check the trace in: /Users/fruitfighter/Desktop/IC3onTLA+/benchmark/_apalache-out/two_phase_commit.tla/2023-05-10T17-49-30_3881499250764985978/violation1.tla, /Users/fruitfighter/Desktop/IC3onTLA+/benchmark/_apalache-out/two_phase_commit.tla/2023-05-10T17-49-30_3881499250764985978/MCviolation1.out, /Users/fruitfighter/Desktop/IC3onTLA+/benchmark/_apalache-out/two_phase_commit.tla/2023-05-10T17-49-30_3881499250764985978/violation1.json, /Users/fruitfighter/Desktop/IC3onTLA+/benchmark/_apalache-out/two_phase_commit.tla/2023-05-10T17-49-30_3881499250764985978/violation1.itf.json
+2023-05-10T17:49:34,296 [main] INFO  a.f.a.t.b.SeqModelChecker - State 0: state invariant 2 violated.
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 3
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 4
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 5
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 6
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 7
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 8
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 9
+2023-05-10T17:49:34,297 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 10
+2023-05-10T17:49:34,297 [main] INFO  a.f.a.t.b.SeqModelChecker - Found 1 error(s)
+2023-05-10T17:49:34,298 [main] DEBUG a.f.a.t.b.s.Z3SolverContext - Disposing Z3 solver context 0
+2023-05-10T17:49:34,304 [main] INFO  a.f.a.t.b.p.BoundedCheckerPassImpl - The outcome is: Error
+2023-05-10T17:49:34,312 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #13: BoundedChecker [FAIL]
+2023-05-10T17:49:34,312 [main] INFO  a.f.a.t.Tool$ - Checker has found an error
+2023-05-10T17:49:34,312 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  3 sec
+2023-05-10T17:49:34,313 [main] INFO  a.f.a.t.Tool$ - Total time: 3.294 sec

@@ -1,0 +1,1 @@
+ check --length=1 --write-intermediate=true --cinit=InitializeNode --output-traces --init=P --inv=P lockserv.tla

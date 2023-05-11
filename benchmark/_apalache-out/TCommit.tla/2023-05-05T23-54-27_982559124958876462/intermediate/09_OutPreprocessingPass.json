@@ -1,0 +1,3669 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache.informal.systems/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "09_OutPreprocessingPass",
+      "declarations": [
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 7,
+              "column": 3
+            },
+            "to": {
+              "line": 7,
+              "column": 4
+            }
+          },
+          "type": "Set(RM)",
+          "kind": "TlaConstDecl",
+          "name": "RM"
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 10,
+              "column": 3
+            },
+            "to": {
+              "line": 10,
+              "column": 9
+            }
+          },
+          "type": "(RM -> Str)",
+          "kind": "TlaVarDecl",
+          "name": "rmState"
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "InitializeRM",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 78,
+                "column": 3
+              },
+              "to": {
+                "line": 78,
+                "column": 41
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "EQ",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 78,
+                    "column": 3
+                  },
+                  "to": {
+                    "line": 78,
+                    "column": 4
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 78,
+                    "column": 8
+                  },
+                  "to": {
+                    "line": 78,
+                    "column": 41
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "OperEx",
+                "oper": "SET_ENUM",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 18
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r1_OF_RM"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 20
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 29
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r2_OF_RM"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 31
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 40
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r3_OF_RM"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "P",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 80,
+                "column": 6
+              },
+              "to": {
+                "line": 80,
+                "column": 29
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 80,
+                    "column": 6
+                  },
+                  "to": {
+                    "line": 80,
+                    "column": 13
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "AND",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 6
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 13
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EQ",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 80,
+                            "column": 6
+                          },
+                          "to": {
+                            "line": 80,
+                            "column": 13
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "OperEx",
+                        "oper": "DOMAIN",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 3
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 9
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 16
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 17
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 6
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 13
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "FORALL3",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 80,
+                            "column": 6
+                          },
+                          "to": {
+                            "line": 80,
+                            "column": 13
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "t_1$1"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 16
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 17
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 80,
+                            "column": 6
+                          },
+                          "to": {
+                            "line": 80,
+                            "column": 13
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "SET_IN",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 80,
+                                "column": 6
+                              },
+                              "to": {
+                                "line": 80,
+                                "column": 13
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "OperEx",
+                            "oper": "FUN_APP",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 3
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 9
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "NameEx",
+                                "name": "rmState"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 80,
+                                    "column": 6
+                                  },
+                                  "to": {
+                                    "line": 80,
+                                    "column": 13
+                                  }
+                                },
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "t_1$1"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 22
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 68
+                              }
+                            },
+                            "type": "Set(Str)",
+                            "kind": "OperEx",
+                            "oper": "SET_ENUM",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 23
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 31
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "working"
+                                }
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 34
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 43
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "prepared"
+                                }
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 46
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 56
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "committed"
+                                }
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 59
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 67
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "aborted"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 80,
+                    "column": 18
+                  },
+                  "to": {
+                    "line": 80,
+                    "column": 29
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "FORALL3",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 18
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 29
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "rm1$1"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 66,
+                        "column": 19
+                      },
+                      "to": {
+                        "line": 66,
+                        "column": 20
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 18
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 29
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "FORALL3",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 66,
+                            "column": 3
+                          },
+                          "to": {
+                            "line": 67,
+                            "column": 54
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm2$1"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 66,
+                            "column": 19
+                          },
+                          "to": {
+                            "line": 66,
+                            "column": 20
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 80,
+                            "column": 18
+                          },
+                          "to": {
+                            "line": 80,
+                            "column": 29
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "OR",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 80,
+                                "column": 18
+                              },
+                              "to": {
+                                "line": 80,
+                                "column": 29
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "NOT",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 80,
+                                    "column": 18
+                                  },
+                                  "to": {
+                                    "line": 80,
+                                    "column": 29
+                                  }
+                                },
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "EQ",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 80,
+                                        "column": 18
+                                      },
+                                      "to": {
+                                        "line": 80,
+                                        "column": 29
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "OperEx",
+                                    "oper": "FUN_APP",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 66,
+                                            "column": 29
+                                          },
+                                          "to": {
+                                            "line": 66,
+                                            "column": 35
+                                          }
+                                        },
+                                        "type": "(RM -> Str)",
+                                        "kind": "NameEx",
+                                        "name": "rmState"
+                                      },
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 66,
+                                            "column": 37
+                                          },
+                                          "to": {
+                                            "line": 66,
+                                            "column": 39
+                                          }
+                                        },
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm1$1"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 66,
+                                        "column": 44
+                                      },
+                                      "to": {
+                                        "line": 66,
+                                        "column": 52
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "aborted"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 80,
+                                "column": 18
+                              },
+                              "to": {
+                                "line": 80,
+                                "column": 29
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "NOT",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 80,
+                                    "column": 18
+                                  },
+                                  "to": {
+                                    "line": 80,
+                                    "column": 29
+                                  }
+                                },
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "EQ",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 80,
+                                        "column": 18
+                                      },
+                                      "to": {
+                                        "line": 80,
+                                        "column": 29
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "OperEx",
+                                    "oper": "FUN_APP",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 67,
+                                            "column": 29
+                                          },
+                                          "to": {
+                                            "line": 67,
+                                            "column": 35
+                                          }
+                                        },
+                                        "type": "(RM -> Str)",
+                                        "kind": "NameEx",
+                                        "name": "rmState"
+                                      },
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 67,
+                                            "column": 37
+                                          },
+                                          "to": {
+                                            "line": 67,
+                                            "column": 39
+                                          }
+                                        },
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm2$1"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 67,
+                                        "column": 44
+                                      },
+                                      "to": {
+                                        "line": 67,
+                                        "column": 54
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "committed"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "NOTP",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 82,
+                "column": 5
+              },
+              "to": {
+                "line": 82,
+                "column": 16
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 82,
+                    "column": 8
+                  },
+                  "to": {
+                    "line": 82,
+                    "column": 16
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "NOT",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 82,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 82,
+                        "column": 16
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "AND",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 82,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 82,
+                            "column": 16
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EQ",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 82,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 82,
+                                "column": 16
+                              }
+                            },
+                            "type": "Set(RM)",
+                            "kind": "OperEx",
+                            "oper": "DOMAIN",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 3
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 9
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "NameEx",
+                                "name": "rmState"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 16
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 17
+                              }
+                            },
+                            "type": "Set(RM)",
+                            "kind": "NameEx",
+                            "name": "RM"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 82,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 82,
+                            "column": 16
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "FORALL3",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 82,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 82,
+                                "column": 16
+                              }
+                            },
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "t_2$1"
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 16
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 17
+                              }
+                            },
+                            "type": "Set(RM)",
+                            "kind": "NameEx",
+                            "name": "RM"
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 82,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 82,
+                                "column": 16
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "SET_IN",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 82,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 82,
+                                    "column": 16
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "OperEx",
+                                "oper": "FUN_APP",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 16,
+                                        "column": 3
+                                      },
+                                      "to": {
+                                        "line": 16,
+                                        "column": 9
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 82,
+                                        "column": 9
+                                      },
+                                      "to": {
+                                        "line": 82,
+                                        "column": 16
+                                      }
+                                    },
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "t_2$1"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 22
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 68
+                                  }
+                                },
+                                "type": "Set(Str)",
+                                "kind": "OperEx",
+                                "oper": "SET_ENUM",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 16,
+                                        "column": 23
+                                      },
+                                      "to": {
+                                        "line": 16,
+                                        "column": 31
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "working"
+                                    }
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 16,
+                                        "column": 34
+                                      },
+                                      "to": {
+                                        "line": 16,
+                                        "column": 43
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "prepared"
+                                    }
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 16,
+                                        "column": 46
+                                      },
+                                      "to": {
+                                        "line": 16,
+                                        "column": 56
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "committed"
+                                    }
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 16,
+                                        "column": 59
+                                      },
+                                      "to": {
+                                        "line": 16,
+                                        "column": 67
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "aborted"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Next",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 48,
+                "column": 9
+              },
+              "to": {
+                "line": 48,
+                "column": 48
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "EXISTS3",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 48,
+                    "column": 9
+                  },
+                  "to": {
+                    "line": 48,
+                    "column": 48
+                  }
+                },
+                "type": "RM",
+                "kind": "NameEx",
+                "name": "rm$1"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 48,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 48,
+                    "column": 20
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 48,
+                    "column": 9
+                  },
+                  "to": {
+                    "line": 48,
+                    "column": 48
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OR",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 48,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 48,
+                        "column": 48
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "AND",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 48
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EQ",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "OperEx",
+                            "oper": "FUN_APP",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 38,
+                                    "column": 19
+                                  },
+                                  "to": {
+                                    "line": 38,
+                                    "column": 25
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "NameEx",
+                                "name": "rmState"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 39,
+                                    "column": 48
+                                  },
+                                  "to": {
+                                    "line": 39,
+                                    "column": 49
+                                  }
+                                },
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "rm$1"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 38,
+                                "column": 33
+                              },
+                              "to": {
+                                "line": 38,
+                                "column": 41
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "working"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 48
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EQ",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "OperEx",
+                            "oper": "PRIME",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 39,
+                                    "column": 19
+                                  },
+                                  "to": {
+                                    "line": 39,
+                                    "column": 25
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "NameEx",
+                                "name": "rmState"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "OperEx",
+                            "oper": "EXCEPT",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 39,
+                                    "column": 31
+                                  },
+                                  "to": {
+                                    "line": 39,
+                                    "column": 37
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "NameEx",
+                                "name": "rmState"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "<<RM>>",
+                                "kind": "OperEx",
+                                "oper": "TUPLE",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 39,
+                                        "column": 48
+                                      },
+                                      "to": {
+                                        "line": 39,
+                                        "column": 49
+                                      }
+                                    },
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm$1"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 39,
+                                    "column": 54
+                                  },
+                                  "to": {
+                                    "line": 39,
+                                    "column": 63
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "prepared"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 48,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 48,
+                        "column": 48
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "OR",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 48
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "AND",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "EQ",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "OperEx",
+                                "oper": "FUN_APP",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 41,
+                                        "column": 22
+                                      },
+                                      "to": {
+                                        "line": 41,
+                                        "column": 28
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 46,
+                                        "column": 51
+                                      },
+                                      "to": {
+                                        "line": 46,
+                                        "column": 52
+                                      }
+                                    },
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm$1"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 41,
+                                    "column": 36
+                                  },
+                                  "to": {
+                                    "line": 41,
+                                    "column": 45
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "prepared"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "FORALL3",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 42,
+                                    "column": 22
+                                  },
+                                  "to": {
+                                    "line": 42,
+                                    "column": 30
+                                  }
+                                },
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "rm$2"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 23,
+                                    "column": 24
+                                  },
+                                  "to": {
+                                    "line": 23,
+                                    "column": 25
+                                  }
+                                },
+                                "type": "Set(RM)",
+                                "kind": "NameEx",
+                                "name": "RM"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "SET_IN",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 48,
+                                        "column": 9
+                                      },
+                                      "to": {
+                                        "line": 48,
+                                        "column": 48
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "OperEx",
+                                    "oper": "FUN_APP",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 23,
+                                            "column": 29
+                                          },
+                                          "to": {
+                                            "line": 23,
+                                            "column": 35
+                                          }
+                                        },
+                                        "type": "(RM -> Str)",
+                                        "kind": "NameEx",
+                                        "name": "rmState"
+                                      },
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 23,
+                                            "column": 37
+                                          },
+                                          "to": {
+                                            "line": 23,
+                                            "column": 38
+                                          }
+                                        },
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm$2"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 48,
+                                        "column": 9
+                                      },
+                                      "to": {
+                                        "line": 48,
+                                        "column": 48
+                                      }
+                                    },
+                                    "type": "Set(Str)",
+                                    "kind": "OperEx",
+                                    "oper": "SET_ENUM",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 23,
+                                            "column": 46
+                                          },
+                                          "to": {
+                                            "line": 23,
+                                            "column": 55
+                                          }
+                                        },
+                                        "type": "Str",
+                                        "kind": "ValEx",
+                                        "value": {
+                                          "kind": "TlaStr",
+                                          "value": "prepared"
+                                        }
+                                      },
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 23,
+                                            "column": 58
+                                          },
+                                          "to": {
+                                            "line": 23,
+                                            "column": 68
+                                          }
+                                        },
+                                        "type": "Str",
+                                        "kind": "ValEx",
+                                        "value": {
+                                          "kind": "TlaStr",
+                                          "value": "committed"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "EQ",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "OperEx",
+                                "oper": "PRIME",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 43,
+                                        "column": 22
+                                      },
+                                      "to": {
+                                        "line": 43,
+                                        "column": 28
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "OperEx",
+                                "oper": "EXCEPT",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 43,
+                                        "column": 34
+                                      },
+                                      "to": {
+                                        "line": 43,
+                                        "column": 40
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 48,
+                                        "column": 9
+                                      },
+                                      "to": {
+                                        "line": 48,
+                                        "column": 48
+                                      }
+                                    },
+                                    "type": "<<RM>>",
+                                    "kind": "OperEx",
+                                    "oper": "TUPLE",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 46,
+                                            "column": 51
+                                          },
+                                          "to": {
+                                            "line": 46,
+                                            "column": 52
+                                          }
+                                        },
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm$1"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 43,
+                                        "column": 57
+                                      },
+                                      "to": {
+                                        "line": 43,
+                                        "column": 67
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "committed"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 48
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "AND",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "SET_IN",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "OperEx",
+                                "oper": "FUN_APP",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 44,
+                                        "column": 22
+                                      },
+                                      "to": {
+                                        "line": 44,
+                                        "column": 28
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 46,
+                                        "column": 51
+                                      },
+                                      "to": {
+                                        "line": 46,
+                                        "column": 52
+                                      }
+                                    },
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm$1"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "Set(Str)",
+                                "kind": "OperEx",
+                                "oper": "SET_ENUM",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 44,
+                                        "column": 39
+                                      },
+                                      "to": {
+                                        "line": 44,
+                                        "column": 47
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "working"
+                                    }
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 44,
+                                        "column": 50
+                                      },
+                                      "to": {
+                                        "line": 44,
+                                        "column": 59
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "prepared"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "FORALL3",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 45,
+                                    "column": 22
+                                  },
+                                  "to": {
+                                    "line": 45,
+                                    "column": 33
+                                  }
+                                },
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "rm$3"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 28,
+                                    "column": 27
+                                  },
+                                  "to": {
+                                    "line": 28,
+                                    "column": 28
+                                  }
+                                },
+                                "type": "Set(RM)",
+                                "kind": "NameEx",
+                                "name": "RM"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "NOT",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 48,
+                                        "column": 9
+                                      },
+                                      "to": {
+                                        "line": 48,
+                                        "column": 48
+                                      }
+                                    },
+                                    "type": "Bool",
+                                    "kind": "OperEx",
+                                    "oper": "EQ",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 48,
+                                            "column": 9
+                                          },
+                                          "to": {
+                                            "line": 48,
+                                            "column": 48
+                                          }
+                                        },
+                                        "type": "Str",
+                                        "kind": "OperEx",
+                                        "oper": "FUN_APP",
+                                        "args": [
+                                          {
+                                            "source": {
+                                              "filename": "TCommit",
+                                              "from": {
+                                                "line": 28,
+                                                "column": 32
+                                              },
+                                              "to": {
+                                                "line": 28,
+                                                "column": 38
+                                              }
+                                            },
+                                            "type": "(RM -> Str)",
+                                            "kind": "NameEx",
+                                            "name": "rmState"
+                                          },
+                                          {
+                                            "source": {
+                                              "filename": "TCommit",
+                                              "from": {
+                                                "line": 28,
+                                                "column": 40
+                                              },
+                                              "to": {
+                                                "line": 28,
+                                                "column": 41
+                                              }
+                                            },
+                                            "type": "RM",
+                                            "kind": "NameEx",
+                                            "name": "rm$3"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 28,
+                                            "column": 46
+                                          },
+                                          "to": {
+                                            "line": 28,
+                                            "column": 56
+                                          }
+                                        },
+                                        "type": "Str",
+                                        "kind": "ValEx",
+                                        "value": {
+                                          "kind": "TlaStr",
+                                          "value": "committed"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 48,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 48,
+                                "column": 48
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "EQ",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "OperEx",
+                                "oper": "PRIME",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 46,
+                                        "column": 22
+                                      },
+                                      "to": {
+                                        "line": 46,
+                                        "column": 28
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 48,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 48,
+                                    "column": 48
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "OperEx",
+                                "oper": "EXCEPT",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 46,
+                                        "column": 34
+                                      },
+                                      "to": {
+                                        "line": 46,
+                                        "column": 40
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 48,
+                                        "column": 9
+                                      },
+                                      "to": {
+                                        "line": 48,
+                                        "column": 48
+                                      }
+                                    },
+                                    "type": "<<RM>>",
+                                    "kind": "OperEx",
+                                    "oper": "TUPLE",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 46,
+                                            "column": 51
+                                          },
+                                          "to": {
+                                            "line": 46,
+                                            "column": 52
+                                          }
+                                        },
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm$1"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 46,
+                                        "column": 57
+                                      },
+                                      "to": {
+                                        "line": 46,
+                                        "column": 65
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "aborted"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Untyped",
+          "kind": "TlaOperDecl",
+          "name": "InitializeRMPrimed",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 78,
+                "column": 3
+              },
+              "to": {
+                "line": 78,
+                "column": 41
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "EQ",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 78,
+                    "column": 3
+                  },
+                  "to": {
+                    "line": 78,
+                    "column": 4
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "OperEx",
+                "oper": "PRIME",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 3
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 4
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 78,
+                    "column": 8
+                  },
+                  "to": {
+                    "line": 78,
+                    "column": 41
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "OperEx",
+                "oper": "SET_ENUM",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 18
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r1_OF_RM"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 20
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 29
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r2_OF_RM"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 31
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 40
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r3_OF_RM"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Untyped",
+          "kind": "TlaOperDecl",
+          "name": "PPrimed",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 80,
+                "column": 6
+              },
+              "to": {
+                "line": 80,
+                "column": 29
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 80,
+                    "column": 6
+                  },
+                  "to": {
+                    "line": 80,
+                    "column": 13
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EXISTS3",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 6
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 13
+                      }
+                    },
+                    "type": "(RM -> Str)",
+                    "kind": "NameEx",
+                    "name": "t_3$1"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 16,
+                        "column": 15
+                      },
+                      "to": {
+                        "line": 16,
+                        "column": 69
+                      }
+                    },
+                    "type": "Set((RM -> Str))",
+                    "kind": "OperEx",
+                    "oper": "FUN_SET",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 16
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 17
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 68
+                          }
+                        },
+                        "type": "Set(Str)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 23
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 31
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "working"
+                            }
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 34
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 43
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "prepared"
+                            }
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 46
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 56
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "committed"
+                            }
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 59
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 67
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "aborted"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 6
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 13
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EQ",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 3
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 9
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "OperEx",
+                        "oper": "PRIME",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 3
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 9
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 80,
+                            "column": 6
+                          },
+                          "to": {
+                            "line": 80,
+                            "column": 13
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "t_3$1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 80,
+                    "column": 18
+                  },
+                  "to": {
+                    "line": 80,
+                    "column": 29
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "FORALL3",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 18
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 29
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "rm1$2"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 66,
+                        "column": 19
+                      },
+                      "to": {
+                        "line": 66,
+                        "column": 20
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 18
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 29
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "FORALL3",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 66,
+                            "column": 3
+                          },
+                          "to": {
+                            "line": 67,
+                            "column": 54
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm2$2"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 66,
+                            "column": 19
+                          },
+                          "to": {
+                            "line": 66,
+                            "column": 20
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 80,
+                            "column": 18
+                          },
+                          "to": {
+                            "line": 80,
+                            "column": 29
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "OR",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 80,
+                                "column": 18
+                              },
+                              "to": {
+                                "line": 80,
+                                "column": 29
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "NOT",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 80,
+                                    "column": 18
+                                  },
+                                  "to": {
+                                    "line": 80,
+                                    "column": 29
+                                  }
+                                },
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "EQ",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 80,
+                                        "column": 18
+                                      },
+                                      "to": {
+                                        "line": 80,
+                                        "column": 29
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "OperEx",
+                                    "oper": "FUN_APP",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 80,
+                                            "column": 18
+                                          },
+                                          "to": {
+                                            "line": 80,
+                                            "column": 29
+                                          }
+                                        },
+                                        "type": "(RM -> Str)",
+                                        "kind": "OperEx",
+                                        "oper": "PRIME",
+                                        "args": [
+                                          {
+                                            "source": {
+                                              "filename": "TCommit",
+                                              "from": {
+                                                "line": 66,
+                                                "column": 29
+                                              },
+                                              "to": {
+                                                "line": 66,
+                                                "column": 35
+                                              }
+                                            },
+                                            "type": "(RM -> Str)",
+                                            "kind": "NameEx",
+                                            "name": "rmState"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 66,
+                                            "column": 37
+                                          },
+                                          "to": {
+                                            "line": 66,
+                                            "column": 39
+                                          }
+                                        },
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm1$2"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 66,
+                                        "column": 44
+                                      },
+                                      "to": {
+                                        "line": 66,
+                                        "column": 52
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "aborted"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 80,
+                                "column": 18
+                              },
+                              "to": {
+                                "line": 80,
+                                "column": 29
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "NOT",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 80,
+                                    "column": 18
+                                  },
+                                  "to": {
+                                    "line": 80,
+                                    "column": 29
+                                  }
+                                },
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "EQ",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 80,
+                                        "column": 18
+                                      },
+                                      "to": {
+                                        "line": 80,
+                                        "column": 29
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "OperEx",
+                                    "oper": "FUN_APP",
+                                    "args": [
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 80,
+                                            "column": 18
+                                          },
+                                          "to": {
+                                            "line": 80,
+                                            "column": 29
+                                          }
+                                        },
+                                        "type": "(RM -> Str)",
+                                        "kind": "OperEx",
+                                        "oper": "PRIME",
+                                        "args": [
+                                          {
+                                            "source": {
+                                              "filename": "TCommit",
+                                              "from": {
+                                                "line": 67,
+                                                "column": 29
+                                              },
+                                              "to": {
+                                                "line": 67,
+                                                "column": 35
+                                              }
+                                            },
+                                            "type": "(RM -> Str)",
+                                            "kind": "NameEx",
+                                            "name": "rmState"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "source": {
+                                          "filename": "TCommit",
+                                          "from": {
+                                            "line": 67,
+                                            "column": 37
+                                          },
+                                          "to": {
+                                            "line": 67,
+                                            "column": 39
+                                          }
+                                        },
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm2$2"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 67,
+                                        "column": 44
+                                      },
+                                      "to": {
+                                        "line": 67,
+                                        "column": 54
+                                      }
+                                    },
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "committed"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Bool",
+          "kind": "TlaOperDecl",
+          "name": "VCInv$0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 82,
+                "column": 8
+              },
+              "to": {
+                "line": 82,
+                "column": 16
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "NOT",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 82,
+                    "column": 9
+                  },
+                  "to": {
+                    "line": 82,
+                    "column": 16
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "AND",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 82,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 82,
+                        "column": 16
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EQ",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 82,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 82,
+                            "column": 16
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "OperEx",
+                        "oper": "DOMAIN",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 3
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 9
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 16
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 17
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 82,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 82,
+                        "column": 16
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "FORALL3",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 82,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 82,
+                            "column": 16
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "t_4$1"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 16
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 17
+                          }
+                        },
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 82,
+                            "column": 9
+                          },
+                          "to": {
+                            "line": 82,
+                            "column": 16
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "SET_IN",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 82,
+                                "column": 9
+                              },
+                              "to": {
+                                "line": 82,
+                                "column": 16
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "OperEx",
+                            "oper": "FUN_APP",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 3
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 9
+                                  }
+                                },
+                                "type": "(RM -> Str)",
+                                "kind": "NameEx",
+                                "name": "rmState"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 82,
+                                    "column": 9
+                                  },
+                                  "to": {
+                                    "line": 82,
+                                    "column": 16
+                                  }
+                                },
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "t_4$1"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 22
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 68
+                              }
+                            },
+                            "type": "Set(Str)",
+                            "kind": "OperEx",
+                            "oper": "SET_ENUM",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 23
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 31
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "working"
+                                }
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 34
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 43
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "prepared"
+                                }
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 46
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 56
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "committed"
+                                }
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 16,
+                                    "column": 59
+                                  },
+                                  "to": {
+                                    "line": 16,
+                                    "column": 67
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "aborted"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Bool",
+          "kind": "TlaOperDecl",
+          "name": "VCNotInv$0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "OperEx",
+                    "oper": "DOMAIN",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 3
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 9
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 16,
+                        "column": 16
+                      },
+                      "to": {
+                        "line": 16,
+                        "column": 17
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "FORALL3",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "t_5$1"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 16,
+                        "column": 16
+                      },
+                      "to": {
+                        "line": 16,
+                        "column": 17
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "SET_IN",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "OperEx",
+                        "oper": "FUN_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 3
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 9
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "t_5$1"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 68
+                          }
+                        },
+                        "type": "Set(Str)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 23
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 31
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "working"
+                            }
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 34
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 43
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "prepared"
+                            }
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 46
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 56
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "committed"
+                            }
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 16,
+                                "column": 59
+                              },
+                              "to": {
+                                "line": 16,
+                                "column": 67
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "aborted"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

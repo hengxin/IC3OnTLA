@@ -1,0 +1,22 @@
+@!@!@STARTMSG 2262:0 @!@!@
+Created by Apalache on Wed May 10 17:59:44 CST 2023
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2110:1 @!@!@
+Invariant is violated.
+@!@!@ENDMSG 2110 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ Node = { "n1_OF_NODE", "n2_OF_NODE" }
+/\ abort_flag = FALSE
+/\ alive = { "n1_OF_NODE", "n2_OF_NODE" }
+/\ decide_abort = { "n1_OF_NODE", "n2_OF_NODE" }
+/\ decide_commit = { "n1_OF_NODE", "n2_OF_NODE" }
+/\ go_abort = { "n1_OF_NODE", "n2_OF_NODE" }
+/\ go_commit = { "n1_OF_NODE", "n2_OF_NODE" }
+/\ vote_no = { "n1_OF_NODE", "n2_OF_NODE" }
+/\ vote_yes = { "n1_OF_NODE", "n2_OF_NODE" }
+
+@!@!@ENDMSG 2217 @!@!@

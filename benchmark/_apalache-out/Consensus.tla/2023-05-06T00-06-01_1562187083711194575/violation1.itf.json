@@ -1,0 +1,35 @@
+{
+  "#meta": {
+    "format": "ITF",
+    "varTypes": {
+      "chosen": "Set(VALUE)"
+    },
+    "format-description": "https://apalache.informal.systems/docs/adr/015adr-trace.html",
+    "description": "Created by Apalache on Sat May 06 00:06:03 CST 2023"
+  },
+  "params": [
+    "Value"
+  ],
+  "vars": [
+    "chosen"
+  ],
+  "states": [
+    {
+      "#meta": {
+        "index": 0
+      },
+      "Value": {
+        "#set": [
+          "v1_OF_VALUE",
+          "v2_OF_VALUE",
+          "v3_OF_VALUE"
+        ]
+      },
+      "chosen": {
+        "#set": [
+          
+        ]
+      }
+    }
+  ]
+}

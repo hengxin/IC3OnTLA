@@ -1,0 +1,375 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache.informal.systems/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "counterexample",
+      "declarations": [
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "ConstInit",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "type": "Set(RM)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "type": "RM",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "r1_OF_RM"
+                        }
+                      },
+                      {
+                        "type": "RM",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "r2_OF_RM"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "State0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "type": "Set(RM)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "type": "RM",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "r1_OF_RM"
+                        }
+                      },
+                      {
+                        "type": "RM",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "r2_OF_RM"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "NameEx",
+                    "name": "msgs"
+                  },
+                  {
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "(RM -> Str)",
+                    "kind": "NameEx",
+                    "name": "rmState"
+                  },
+                  {
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "Apalache!SetAsFun",
+                    "args": [
+                      {
+                        "type": "Set(<<RM, Str>>)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "type": "<<RM, Str>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "RM",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "r1_OF_RM"
+                                }
+                              },
+                              {
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "aborted"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "<<RM, Str>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "RM",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "r2_OF_RM"
+                                }
+                              },
+                              {
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "committed"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "tmPrepared"
+                  },
+                  {
+                    "type": "Set(RM)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "tmState"
+                  },
+                  {
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "committed"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "InvariantViolation",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "Apalache!Skolem",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EXISTS3",
+                "args": [
+                  {
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "rm1$2"
+                  },
+                  {
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "Apalache!Skolem",
+                    "args": [
+                      {
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EXISTS3",
+                        "args": [
+                          {
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm2$2"
+                          },
+                          {
+                            "type": "Set(RM)",
+                            "kind": "NameEx",
+                            "name": "RM"
+                          },
+                          {
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "AND",
+                            "args": [
+                              {
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "EQ",
+                                "args": [
+                                  {
+                                    "type": "Str",
+                                    "kind": "OperEx",
+                                    "oper": "FUN_APP",
+                                    "args": [
+                                      {
+                                        "type": "(RM -> Str)",
+                                        "kind": "NameEx",
+                                        "name": "rmState"
+                                      },
+                                      {
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm1$2"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "aborted"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "EQ",
+                                "args": [
+                                  {
+                                    "type": "Str",
+                                    "kind": "OperEx",
+                                    "oper": "FUN_APP",
+                                    "args": [
+                                      {
+                                        "type": "(RM -> Str)",
+                                        "kind": "NameEx",
+                                        "name": "rmState"
+                                      },
+                                      {
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm2$2"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Str",
+                                    "kind": "ValEx",
+                                    "value": {
+                                      "kind": "TlaStr",
+                                      "value": "committed"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

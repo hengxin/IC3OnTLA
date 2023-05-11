@@ -1,0 +1,58 @@
+{
+  "#meta": {
+    "format": "ITF",
+    "varTypes": {
+      "msgs": "Set([rm: RM, type: Str])",
+      "rmState": "(RM -> Str)",
+      "tmState": "Str",
+      "tmPrepared": "Set(RM)"
+    },
+    "format-description": "https://apalache.informal.systems/docs/adr/015adr-trace.html",
+    "description": "Created by Apalache on Wed May 10 17:33:15 CST 2023"
+  },
+  "params": [
+    "RM"
+  ],
+  "vars": [
+    "msgs",
+    "rmState",
+    "tmState",
+    "tmPrepared"
+  ],
+  "states": [
+    {
+      "#meta": {
+        "index": 0
+      },
+      "RM": {
+        "#set": [
+          "r1_OF_RM",
+          "r2_OF_RM"
+        ]
+      },
+      "msgs": {
+        "#set": [
+          
+        ]
+      },
+      "rmState": {
+        "#map": [
+          [
+            "r1_OF_RM",
+            "aborted"
+          ],
+          [
+            "r2_OF_RM",
+            "committed"
+          ]
+        ]
+      },
+      "tmPrepared": {
+        "#set": [
+          
+        ]
+      },
+      "tmState": "committed"
+    }
+  ]
+}

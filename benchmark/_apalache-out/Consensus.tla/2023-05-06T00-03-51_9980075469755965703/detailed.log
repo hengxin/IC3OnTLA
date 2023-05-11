@@ -1,0 +1,75 @@
+2023-05-06T00:03:51,932 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-06T00:03:51,960 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=true
+2023-05-06T00:03:52,186 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-06T00:03:52,569 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [OK]
+2023-05-06T00:03:52,570 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat
+2023-05-06T00:03:52,570 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Running Snowcat .::.
+2023-05-06T00:03:52,791 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Your types are purrfect!
+2023-05-06T00:03:52,791 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > All expressions are typed
+2023-05-06T00:03:52,818 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat [OK]
+2023-05-06T00:03:52,818 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #2: ConfigurationPass
+2023-05-06T00:03:52,822 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the initialization predicate to Init
+2023-05-06T00:03:52,822 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the transition predicate to Next
+2023-05-06T00:03:52,823 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the constant initialization predicate to InitializeVALUE
+2023-05-06T00:03:52,823 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set an invariant to Inv
+2023-05-06T00:03:52,848 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #2: ConfigurationPass [OK]
+2023-05-06T00:03:52,849 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #3: DesugarerPass
+2023-05-06T00:03:52,849 [main] INFO  a.f.a.t.p.p.DesugarerPassImpl -   > Desugaring...
+2023-05-06T00:03:53,094 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #3: DesugarerPass [OK]
+2023-05-06T00:03:53,094 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #4: InlinePass
+2023-05-06T00:03:53,095 [main] INFO  a.f.a.t.p.p.InlinePassImpl - Leaving only relevant operators: Init, InitPrimed, InitializeVALUE, InitializeVALUEPrimed, Inv, Next
+2023-05-06T00:03:53,126 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #4: InlinePass [OK]
+2023-05-06T00:03:53,126 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #5: TemporalPass
+2023-05-06T00:03:53,127 [main] INFO  a.f.a.t.p.p.TemporalPassImpl -   > Rewriting temporal operators...
+2023-05-06T00:03:53,127 [main] INFO  a.f.a.t.p.p.TemporalPassImpl -   > No temporal property specified, nothing to encode
+2023-05-06T00:03:53,134 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #5: TemporalPass [OK]
+2023-05-06T00:03:53,135 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #6: InlinePass
+2023-05-06T00:03:53,135 [main] INFO  a.f.a.t.p.p.InlinePassImpl - Leaving only relevant operators: Init, InitPrimed, InitializeVALUE, InitializeVALUEPrimed, Inv, Next
+2023-05-06T00:03:53,144 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #6: InlinePass [OK]
+2023-05-06T00:03:53,144 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #7: PrimingPass
+2023-05-06T00:03:53,147 [main] INFO  a.f.a.t.p.a.PrimingPassImpl -   > Introducing InitializeVALUEPrimed for InitializeVALUE'
+2023-05-06T00:03:53,148 [main] INFO  a.f.a.t.p.a.PrimingPassImpl -   > Introducing InitPrimed for Init'
+2023-05-06T00:03:53,156 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #7: PrimingPass [OK]
+2023-05-06T00:03:53,156 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #8: VCGen
+2023-05-06T00:03:53,157 [main] INFO  a.f.a.t.b.p.VCGenPassImpl -   > Producing verification conditions from the invariant Inv
+2023-05-06T00:03:53,162 [main] INFO  a.f.a.t.b.VCGenerator -   > VCGen produced 2 verification condition(s)
+2023-05-06T00:03:53,175 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #8: VCGen [OK]
+2023-05-06T00:03:53,175 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #9: PreprocessingPass
+2023-05-06T00:03:53,175 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Before preprocessing: unique renaming
+2023-05-06T00:03:53,183 [main] INFO  a.f.a.t.p.p.PreproPassImpl -  > Applying standard transformations:
+2023-05-06T00:03:53,184 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > PrimePropagation
+2023-05-06T00:03:53,192 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Desugarer
+2023-05-06T00:03:53,201 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > UniqueRenamer
+2023-05-06T00:03:53,212 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Normalizer
+2023-05-06T00:03:53,221 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Keramelizer
+2023-05-06T00:03:53,230 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > After preprocessing: UniqueRenamer
+2023-05-06T00:03:53,241 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #9: PreprocessingPass [OK]
+2023-05-06T00:03:53,241 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #10: TransitionFinderPass
+2023-05-06T00:03:53,250 [main] INFO  a.f.a.t.p.a.TransitionPassImpl -   > Found 1 initializing transitions
+2023-05-06T00:03:53,252 [main] INFO  a.f.a.t.p.a.TransitionPassImpl -   > Found 1 transitions
+2023-05-06T00:03:53,253 [main] INFO  a.f.a.t.p.a.TransitionPassImpl -   > Found constant initializer InitializeVALUE
+2023-05-06T00:03:53,254 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - Adapted exception intercepted: 
+at.forsyte.apalache.tla.assignments.AssignmentException: No assignments found for: Value
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.getStrategy(SmtFreeSymbolicTransitionExtractor.scala:169)
+	at at.forsyte.apalache.tla.assignments.SmtFreeSymbolicTransitionExtractor.apply(SmtFreeSymbolicTransitionExtractor.scala:187)
+	at at.forsyte.apalache.tla.passes.assignments.TransitionPassImpl.extractTransitions$1(TransitionPassImpl.scala:41)
+	at at.forsyte.apalache.tla.passes.assignments.TransitionPassImpl.execute(TransitionPassImpl.scala:72)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.exec(PassChainExecutor.scala:64)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.$anonfun$runPassOnModule$3(PassChainExecutor.scala:53)
+	at scala.util.Either.flatMap(Either.scala:352)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.$anonfun$runPassOnModule$1(PassChainExecutor.scala:51)
+	at scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)
+	at scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)
+	at scala.collection.immutable.List.foldLeft(List.scala:79)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.runOnPasses(PassChainExecutor.scala:44)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.run(PassChainExecutor.scala:34)
+	at at.forsyte.apalache.tla.tooling.opt.CheckCmd.run(CheckCmd.scala:132)
+	at at.forsyte.apalache.tla.Tool$.runCommand(Tool.scala:138)
+	at at.forsyte.apalache.tla.Tool$.run(Tool.scala:118)
+	at at.forsyte.apalache.tla.Tool$.main(Tool.scala:40)
+	at at.forsyte.apalache.tla.Tool.main(Tool.scala)
+2023-05-06T00:03:53,255 [main] INFO  a.f.a.t.b.c.CheckerExceptionAdapter - To understand the error, read the manual:
+2023-05-06T00:03:53,255 [main] INFO  a.f.a.t.b.c.CheckerExceptionAdapter -   [https://apalache.informal.systems/docs/apalache/principles/assignments.html]
+2023-05-06T00:03:53,256 [main] ERROR a.f.a.t.Tool$ - Assignment error: No assignments found for: Value
+2023-05-06T00:03:53,256 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  1 sec
+2023-05-06T00:03:53,256 [main] INFO  a.f.a.t.Tool$ - Total time: 1.321 sec

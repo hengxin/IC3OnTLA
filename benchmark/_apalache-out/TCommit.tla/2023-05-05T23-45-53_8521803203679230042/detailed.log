@@ -1,0 +1,13 @@
+2023-05-05T23:45:53,056 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-05T23:45:53,092 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=false
+2023-05-05T23:45:53,332 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-05T23:45:53,706 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [OK]
+2023-05-05T23:45:53,707 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat
+2023-05-05T23:45:53,707 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Running Snowcat .::.
+2023-05-05T23:45:54,226 [main] ERROR a.f.a.t.p.t.LoggingTypeCheckerListener - [TCommit.tla:16:3-16:69]: An operator with the signature ((a49, Set(a49)) => Bool) cannot be applied to the provided arguments of type Set(RM) and Set((RM -> Str))
+2023-05-05T23:45:54,233 [main] ERROR a.f.a.t.p.t.LoggingTypeCheckerListener - [TCommit.tla:12:1-16:69]: Error when computing the type of TCTypeOK
+2023-05-05T23:45:54,235 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Snowcat asks you to fix the types. Meow.
+2023-05-05T23:45:54,260 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat [FAIL]
+2023-05-05T23:45:54,260 [main] INFO  a.f.a.t.Tool$ - Checker has found an error
+2023-05-05T23:45:54,261 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  1 sec
+2023-05-05T23:45:54,261 [main] INFO  a.f.a.t.Tool$ - Total time: 1.201 sec

@@ -1,0 +1,876 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache.informal.systems/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "12_OutAnalysisPass",
+      "declarations": [
+        {
+          "source": {
+            "filename": "Consensus",
+            "from": {
+              "line": 8,
+              "column": 3
+            },
+            "to": {
+              "line": 8,
+              "column": 7
+            }
+          },
+          "type": "Set(VALUE)",
+          "kind": "TlaConstDecl",
+          "name": "Value"
+        },
+        {
+          "source": {
+            "filename": "Consensus",
+            "from": {
+              "line": 15,
+              "column": 3
+            },
+            "to": {
+              "line": 15,
+              "column": 8
+            }
+          },
+          "type": "Set(VALUE)",
+          "kind": "TlaVarDecl",
+          "name": "chosen"
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "CInit$0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "Apalache!:=",
+            "args": [
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 24,
+                    "column": 20
+                  },
+                  "to": {
+                    "line": 24,
+                    "column": 24
+                  }
+                },
+                "type": "Set(VALUE)",
+                "kind": "OperEx",
+                "oper": "PRIME",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 24,
+                        "column": 20
+                      },
+                      "to": {
+                        "line": 24,
+                        "column": 24
+                      }
+                    },
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "Value"
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 24,
+                    "column": 28
+                  },
+                  "to": {
+                    "line": 24,
+                    "column": 70
+                  }
+                },
+                "type": "Set(VALUE)",
+                "kind": "OperEx",
+                "oper": "SET_ENUM",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 24,
+                        "column": 29
+                      },
+                      "to": {
+                        "line": 24,
+                        "column": 41
+                      }
+                    },
+                    "type": "VALUE",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "v1_OF_VALUE"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 24,
+                        "column": 43
+                      },
+                      "to": {
+                        "line": 24,
+                        "column": 55
+                      }
+                    },
+                    "type": "VALUE",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "v2_OF_VALUE"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 24,
+                        "column": 57
+                      },
+                      "to": {
+                        "line": 24,
+                        "column": 69
+                      }
+                    },
+                    "type": "VALUE",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "v3_OF_VALUE"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Init$0000",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "Consensus",
+              "from": {
+                "line": 28,
+                "column": 9
+              },
+              "to": {
+                "line": 28,
+                "column": 19
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "Apalache!:=",
+            "args": [
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 28,
+                    "column": 9
+                  },
+                  "to": {
+                    "line": 28,
+                    "column": 14
+                  }
+                },
+                "type": "Set(VALUE)",
+                "kind": "OperEx",
+                "oper": "PRIME",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 28,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 28,
+                        "column": 14
+                      }
+                    },
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "chosen"
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 28,
+                    "column": 18
+                  },
+                  "to": {
+                    "line": 28,
+                    "column": 19
+                  }
+                },
+                "type": "Set(VALUE)",
+                "kind": "OperEx",
+                "oper": "SET_ENUM",
+                "args": [
+                  
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Next$0000",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "Consensus",
+              "from": {
+                "line": 30,
+                "column": 9
+              },
+              "to": {
+                "line": 31,
+                "column": 41
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 30,
+                    "column": 12
+                  },
+                  "to": {
+                    "line": 30,
+                    "column": 22
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 30,
+                        "column": 12
+                      },
+                      "to": {
+                        "line": 30,
+                        "column": 17
+                      }
+                    },
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "chosen"
+                  },
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 30,
+                        "column": 21
+                      },
+                      "to": {
+                        "line": 30,
+                        "column": 22
+                      }
+                    },
+                    "type": "Set(VALUE)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 31,
+                    "column": 12
+                  },
+                  "to": {
+                    "line": 31,
+                    "column": 41
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "Apalache!Skolem",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 31,
+                        "column": 12
+                      },
+                      "to": {
+                        "line": 31,
+                        "column": 41
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EXISTS3",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "Consensus",
+                          "from": {
+                            "line": 31,
+                            "column": 12
+                          },
+                          "to": {
+                            "line": 31,
+                            "column": 41
+                          }
+                        },
+                        "type": "VALUE",
+                        "kind": "NameEx",
+                        "name": "v$1"
+                      },
+                      {
+                        "source": {
+                          "filename": "Consensus",
+                          "from": {
+                            "line": 31,
+                            "column": 21
+                          },
+                          "to": {
+                            "line": 31,
+                            "column": 25
+                          }
+                        },
+                        "type": "Set(VALUE)",
+                        "kind": "NameEx",
+                        "name": "Value"
+                      },
+                      {
+                        "source": {
+                          "filename": "Consensus",
+                          "from": {
+                            "line": 31,
+                            "column": 12
+                          },
+                          "to": {
+                            "line": 31,
+                            "column": 41
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "Apalache!:=",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "Consensus",
+                              "from": {
+                                "line": 31,
+                                "column": 12
+                              },
+                              "to": {
+                                "line": 31,
+                                "column": 41
+                              }
+                            },
+                            "type": "Set(VALUE)",
+                            "kind": "OperEx",
+                            "oper": "PRIME",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "Consensus",
+                                  "from": {
+                                    "line": 31,
+                                    "column": 29
+                                  },
+                                  "to": {
+                                    "line": 31,
+                                    "column": 34
+                                  }
+                                },
+                                "type": "Set(VALUE)",
+                                "kind": "NameEx",
+                                "name": "chosen"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "Consensus",
+                              "from": {
+                                "line": 31,
+                                "column": 12
+                              },
+                              "to": {
+                                "line": 31,
+                                "column": 41
+                              }
+                            },
+                            "type": "Set(VALUE)",
+                            "kind": "OperEx",
+                            "oper": "SET_ENUM",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "Consensus",
+                                  "from": {
+                                    "line": 31,
+                                    "column": 40
+                                  },
+                                  "to": {
+                                    "line": 31,
+                                    "column": 40
+                                  }
+                                },
+                                "type": "VALUE",
+                                "kind": "NameEx",
+                                "name": "v$1"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Bool",
+          "kind": "TlaOperDecl",
+          "name": "VCInv$0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "Consensus",
+              "from": {
+                "line": 23,
+                "column": 14
+              },
+              "to": {
+                "line": 23,
+                "column": 36
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "SET_IN",
+            "args": [
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 23,
+                    "column": 14
+                  },
+                  "to": {
+                    "line": 23,
+                    "column": 19
+                  }
+                },
+                "type": "Set(VALUE)",
+                "kind": "NameEx",
+                "name": "chosen"
+              },
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 23,
+                    "column": 25
+                  },
+                  "to": {
+                    "line": 23,
+                    "column": 36
+                  }
+                },
+                "type": "Set(Set(VALUE))",
+                "kind": "OperEx",
+                "oper": "SET_POWERSET",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 23,
+                        "column": 32
+                      },
+                      "to": {
+                        "line": 23,
+                        "column": 36
+                      }
+                    },
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "Value"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Bool",
+          "kind": "TlaOperDecl",
+          "name": "VCNotInv$0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "NOT",
+            "args": [
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 23,
+                    "column": 14
+                  },
+                  "to": {
+                    "line": 23,
+                    "column": 36
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 23,
+                        "column": 14
+                      },
+                      "to": {
+                        "line": 23,
+                        "column": 19
+                      }
+                    },
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "chosen"
+                  },
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 23,
+                        "column": 25
+                      },
+                      "to": {
+                        "line": 23,
+                        "column": 36
+                      }
+                    },
+                    "type": "Set(Set(VALUE))",
+                    "kind": "OperEx",
+                    "oper": "SET_POWERSET",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "Consensus",
+                          "from": {
+                            "line": 23,
+                            "column": 32
+                          },
+                          "to": {
+                            "line": 23,
+                            "column": 36
+                          }
+                        },
+                        "type": "Set(VALUE)",
+                        "kind": "NameEx",
+                        "name": "Value"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Bool",
+          "kind": "TlaOperDecl",
+          "name": "VCInv$1",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "Consensus",
+              "from": {
+                "line": 42,
+                "column": 11
+              },
+              "to": {
+                "line": 42,
+                "column": 36
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "LE",
+            "args": [
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 42,
+                    "column": 11
+                  },
+                  "to": {
+                    "line": 42,
+                    "column": 29
+                  }
+                },
+                "type": "Int",
+                "kind": "OperEx",
+                "oper": "FiniteSets!Cardinality",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "Consensus",
+                      "from": {
+                        "line": 42,
+                        "column": 23
+                      },
+                      "to": {
+                        "line": 42,
+                        "column": 28
+                      }
+                    },
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "chosen"
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "Consensus",
+                  "from": {
+                    "line": 42,
+                    "column": 36
+                  },
+                  "to": {
+                    "line": 42,
+                    "column": 36
+                  }
+                },
+                "type": "Int",
+                "kind": "ValEx",
+                "value": {
+                  "kind": "TlaInt",
+                  "value": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Bool",
+          "kind": "TlaOperDecl",
+          "name": "VCNotInv$1",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "LetInEx",
+            "body": {
+              "source": "UNKNOWN",
+              "type": "Bool",
+              "kind": "OperEx",
+              "oper": "Apalache!Skolem",
+              "args": [
+                {
+                  "source": "UNKNOWN",
+                  "type": "Bool",
+                  "kind": "OperEx",
+                  "oper": "EXISTS3",
+                  "args": [
+                    {
+                      "source": "UNKNOWN",
+                      "type": "VALUE",
+                      "kind": "NameEx",
+                      "name": "t_1"
+                    },
+                    {
+                      "source": "UNKNOWN",
+                      "type": "Set(VALUE)",
+                      "kind": "OperEx",
+                      "oper": "OPER_APP",
+                      "args": [
+                        {
+                          "source": "UNKNOWN",
+                          "type": "(() => Set(VALUE))",
+                          "kind": "NameEx",
+                          "name": "t_3"
+                        }
+                      ]
+                    },
+                    {
+                      "source": "UNKNOWN",
+                      "type": "Bool",
+                      "kind": "OperEx",
+                      "oper": "Apalache!Skolem",
+                      "args": [
+                        {
+                          "source": "UNKNOWN",
+                          "type": "Bool",
+                          "kind": "OperEx",
+                          "oper": "EXISTS3",
+                          "args": [
+                            {
+                              "source": "UNKNOWN",
+                              "type": "VALUE",
+                              "kind": "NameEx",
+                              "name": "t_2"
+                            },
+                            {
+                              "source": "UNKNOWN",
+                              "type": "Set(VALUE)",
+                              "kind": "OperEx",
+                              "oper": "OPER_APP",
+                              "args": [
+                                {
+                                  "source": "UNKNOWN",
+                                  "type": "(() => Set(VALUE))",
+                                  "kind": "NameEx",
+                                  "name": "t_3"
+                                }
+                              ]
+                            },
+                            {
+                              "source": "UNKNOWN",
+                              "type": "Bool",
+                              "kind": "OperEx",
+                              "oper": "NOT",
+                              "args": [
+                                {
+                                  "source": "UNKNOWN",
+                                  "type": "Bool",
+                                  "kind": "OperEx",
+                                  "oper": "EQ",
+                                  "args": [
+                                    {
+                                      "source": "UNKNOWN",
+                                      "type": "VALUE",
+                                      "kind": "NameEx",
+                                      "name": "t_1"
+                                    },
+                                    {
+                                      "source": "UNKNOWN",
+                                      "type": "VALUE",
+                                      "kind": "NameEx",
+                                      "name": "t_2"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "decls": [
+              {
+                "source": "UNKNOWN",
+                "type": "(() => Set(VALUE))",
+                "kind": "TlaOperDecl",
+                "name": "t_3",
+                "formalParams": [
+                  
+                ],
+                "isRecursive": false,
+                "body": {
+                  "source": {
+                    "filename": "Consensus",
+                    "from": {
+                      "line": 42,
+                      "column": 23
+                    },
+                    "to": {
+                      "line": 42,
+                      "column": 28
+                    }
+                  },
+                  "type": "Set(VALUE)",
+                  "kind": "NameEx",
+                  "name": "chosen"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

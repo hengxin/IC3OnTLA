@@ -1,0 +1,5215 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache.informal.systems/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "02_OutConfigurationPass",
+      "declarations": [
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 7,
+              "column": 3
+            },
+            "to": {
+              "line": 7,
+              "column": 4
+            }
+          },
+          "type": "Set(RM)",
+          "kind": "TlaConstDecl",
+          "name": "RM"
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 10,
+              "column": 3
+            },
+            "to": {
+              "line": 10,
+              "column": 9
+            }
+          },
+          "type": "(RM -> Str)",
+          "kind": "TlaVarDecl",
+          "name": "rmState"
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 24,
+              "column": 1
+            },
+            "to": {
+              "line": 25,
+              "column": 37
+            }
+          },
+          "type": "((a163, a164) => (a163 -> a164))",
+          "kind": "TlaOperDecl",
+          "name": ":>",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__key",
+              "arity": 0
+            },
+            {
+              "kind": "OperParam",
+              "name": "__value",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 25,
+                "column": 5
+              },
+              "to": {
+                "line": 25,
+                "column": 37
+              }
+            },
+            "type": "(a163 -> a164)",
+            "kind": "OperEx",
+            "oper": "FUN_CTOR",
+            "args": [
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 25,
+                    "column": 29
+                  },
+                  "to": {
+                    "line": 25,
+                    "column": 35
+                  }
+                },
+                "type": "a164",
+                "kind": "NameEx",
+                "name": "__value"
+              },
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 25,
+                    "column": 5
+                  },
+                  "to": {
+                    "line": 25,
+                    "column": 37
+                  }
+                },
+                "type": "a163",
+                "kind": "NameEx",
+                "name": "__x"
+              },
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 25,
+                    "column": 15
+                  },
+                  "to": {
+                    "line": 25,
+                    "column": 23
+                  }
+                },
+                "type": "Set(a163)",
+                "kind": "OperEx",
+                "oper": "SET_ENUM",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 25,
+                        "column": 17
+                      },
+                      "to": {
+                        "line": 25,
+                        "column": 21
+                      }
+                    },
+                    "type": "a163",
+                    "kind": "NameEx",
+                    "name": "__key"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 30,
+              "column": 1
+            },
+            "to": {
+              "line": 41,
+              "column": 33
+            }
+          },
+          "type": "(((a142 -> a143), (a142 -> a143)) => (a142 -> a143))",
+          "kind": "TlaOperDecl",
+          "name": "@@",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__f1",
+              "arity": 0
+            },
+            {
+              "kind": "OperParam",
+              "name": "__f2",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 32,
+                "column": 5
+              },
+              "to": {
+                "line": 41,
+                "column": 33
+              }
+            },
+            "type": "(a142 -> a143)",
+            "kind": "LetInEx",
+            "body": {
+              "source": {
+                "filename": "TLC",
+                "from": {
+                  "line": 35,
+                  "column": 5
+                },
+                "to": {
+                  "line": 41,
+                  "column": 33
+                }
+              },
+              "type": "(a142 -> a143)",
+              "kind": "LetInEx",
+              "body": {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 38,
+                    "column": 5
+                  },
+                  "to": {
+                    "line": 41,
+                    "column": 33
+                  }
+                },
+                "type": "(a142 -> a143)",
+                "kind": "OperEx",
+                "oper": "FUN_CTOR",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 39,
+                        "column": 13
+                      },
+                      "to": {
+                        "line": 41,
+                        "column": 32
+                      }
+                    },
+                    "type": "a143",
+                    "kind": "OperEx",
+                    "oper": "IF_THEN_ELSE",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 39,
+                            "column": 16
+                          },
+                          "to": {
+                            "line": 39,
+                            "column": 27
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "SET_IN",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 39,
+                                "column": 16
+                              },
+                              "to": {
+                                "line": 39,
+                                "column": 18
+                              }
+                            },
+                            "type": "a142",
+                            "kind": "NameEx",
+                            "name": "__x"
+                          },
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 39,
+                                "column": 24
+                              },
+                              "to": {
+                                "line": 39,
+                                "column": 27
+                              }
+                            },
+                            "type": "Set(a142)",
+                            "kind": "OperEx",
+                            "oper": "OPER_APP",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TLC",
+                                  "from": {
+                                    "line": 39,
+                                    "column": 24
+                                  },
+                                  "to": {
+                                    "line": 39,
+                                    "column": 27
+                                  }
+                                },
+                                "type": "(() => Set(a142))",
+                                "kind": "NameEx",
+                                "name": "__d1"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 40,
+                            "column": 18
+                          },
+                          "to": {
+                            "line": 40,
+                            "column": 32
+                          }
+                        },
+                        "type": "a143",
+                        "kind": "OperEx",
+                        "oper": "FUN_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 40,
+                                "column": 18
+                              },
+                              "to": {
+                                "line": 40,
+                                "column": 27
+                              }
+                            },
+                            "type": "(a142 -> a143)",
+                            "kind": "OperEx",
+                            "oper": "OPER_APP",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TLC",
+                                  "from": {
+                                    "line": 40,
+                                    "column": 18
+                                  },
+                                  "to": {
+                                    "line": 40,
+                                    "column": 27
+                                  }
+                                },
+                                "type": "(() => (a142 -> a143))",
+                                "kind": "NameEx",
+                                "name": "__f1_cache"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 40,
+                                "column": 29
+                              },
+                              "to": {
+                                "line": 40,
+                                "column": 31
+                              }
+                            },
+                            "type": "a142",
+                            "kind": "NameEx",
+                            "name": "__x"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 41,
+                            "column": 18
+                          },
+                          "to": {
+                            "line": 41,
+                            "column": 32
+                          }
+                        },
+                        "type": "a143",
+                        "kind": "OperEx",
+                        "oper": "FUN_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 41,
+                                "column": 18
+                              },
+                              "to": {
+                                "line": 41,
+                                "column": 27
+                              }
+                            },
+                            "type": "(a142 -> a143)",
+                            "kind": "OperEx",
+                            "oper": "OPER_APP",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TLC",
+                                  "from": {
+                                    "line": 41,
+                                    "column": 18
+                                  },
+                                  "to": {
+                                    "line": 41,
+                                    "column": 27
+                                  }
+                                },
+                                "type": "(() => (a142 -> a143))",
+                                "kind": "NameEx",
+                                "name": "__f2_cache"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 41,
+                                "column": 29
+                              },
+                              "to": {
+                                "line": 41,
+                                "column": 31
+                              }
+                            },
+                            "type": "a142",
+                            "kind": "NameEx",
+                            "name": "__x"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 38,
+                        "column": 5
+                      },
+                      "to": {
+                        "line": 41,
+                        "column": 33
+                      }
+                    },
+                    "type": "a142",
+                    "kind": "NameEx",
+                    "name": "__x"
+                  },
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 38,
+                        "column": 14
+                      },
+                      "to": {
+                        "line": 38,
+                        "column": 29
+                      }
+                    },
+                    "type": "Set(a142)",
+                    "kind": "OperEx",
+                    "oper": "SET_UNION2",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 38,
+                            "column": 14
+                          },
+                          "to": {
+                            "line": 38,
+                            "column": 17
+                          }
+                        },
+                        "type": "Set(a142)",
+                        "kind": "OperEx",
+                        "oper": "OPER_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 38,
+                                "column": 14
+                              },
+                              "to": {
+                                "line": 38,
+                                "column": 17
+                              }
+                            },
+                            "type": "(() => Set(a142))",
+                            "kind": "NameEx",
+                            "name": "__d1"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 38,
+                            "column": 26
+                          },
+                          "to": {
+                            "line": 38,
+                            "column": 29
+                          }
+                        },
+                        "type": "Set(a142)",
+                        "kind": "OperEx",
+                        "oper": "OPER_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 38,
+                                "column": 26
+                              },
+                              "to": {
+                                "line": 38,
+                                "column": 29
+                              }
+                            },
+                            "type": "(() => Set(a142))",
+                            "kind": "NameEx",
+                            "name": "__d2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "decls": [
+                {
+                  "source": "UNKNOWN",
+                  "type": "(() => Set(a142))",
+                  "kind": "TlaOperDecl",
+                  "name": "__d1",
+                  "formalParams": [
+                    
+                  ],
+                  "isRecursive": false,
+                  "body": {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 35,
+                        "column": 17
+                      },
+                      "to": {
+                        "line": 35,
+                        "column": 33
+                      }
+                    },
+                    "type": "Set(a142)",
+                    "kind": "OperEx",
+                    "oper": "DOMAIN",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 35,
+                            "column": 24
+                          },
+                          "to": {
+                            "line": 35,
+                            "column": 33
+                          }
+                        },
+                        "type": "(a142 -> a143)",
+                        "kind": "OperEx",
+                        "oper": "OPER_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 35,
+                                "column": 24
+                              },
+                              "to": {
+                                "line": 35,
+                                "column": 33
+                              }
+                            },
+                            "type": "(() => (a142 -> a143))",
+                            "kind": "NameEx",
+                            "name": "__f1_cache"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "source": "UNKNOWN",
+                  "type": "(() => Set(a142))",
+                  "kind": "TlaOperDecl",
+                  "name": "__d2",
+                  "formalParams": [
+                    
+                  ],
+                  "isRecursive": false,
+                  "body": {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 36,
+                        "column": 17
+                      },
+                      "to": {
+                        "line": 36,
+                        "column": 33
+                      }
+                    },
+                    "type": "Set(a142)",
+                    "kind": "OperEx",
+                    "oper": "DOMAIN",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 36,
+                            "column": 24
+                          },
+                          "to": {
+                            "line": 36,
+                            "column": 33
+                          }
+                        },
+                        "type": "(a142 -> a143)",
+                        "kind": "OperEx",
+                        "oper": "OPER_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 36,
+                                "column": 24
+                              },
+                              "to": {
+                                "line": 36,
+                                "column": 33
+                              }
+                            },
+                            "type": "(() => (a142 -> a143))",
+                            "kind": "NameEx",
+                            "name": "__f2_cache"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "decls": [
+              {
+                "source": "UNKNOWN",
+                "type": "(() => (a142 -> a143))",
+                "kind": "TlaOperDecl",
+                "name": "__f1_cache",
+                "formalParams": [
+                  
+                ],
+                "isRecursive": false,
+                "body": {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 32,
+                      "column": 23
+                    },
+                    "to": {
+                      "line": 32,
+                      "column": 26
+                    }
+                  },
+                  "type": "(a142 -> a143)",
+                  "kind": "NameEx",
+                  "name": "__f1"
+                }
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "(() => (a142 -> a143))",
+                "kind": "TlaOperDecl",
+                "name": "__f2_cache",
+                "formalParams": [
+                  
+                ],
+                "isRecursive": false,
+                "body": {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 33,
+                      "column": 23
+                    },
+                    "to": {
+                      "line": 33,
+                      "column": 26
+                    }
+                  },
+                  "type": "(a142 -> a143)",
+                  "kind": "NameEx",
+                  "name": "__f2"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 46,
+              "column": 1
+            },
+            "to": {
+              "line": 47,
+              "column": 9
+            }
+          },
+          "type": "((Str, a138) => a138)",
+          "kind": "TlaOperDecl",
+          "name": "Print",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__out",
+              "arity": 0
+            },
+            {
+              "kind": "OperParam",
+              "name": "__val",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 47,
+                "column": 5
+              },
+              "to": {
+                "line": 47,
+                "column": 9
+              }
+            },
+            "type": "a138",
+            "kind": "NameEx",
+            "name": "__val"
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 52,
+              "column": 1
+            },
+            "to": {
+              "line": 53,
+              "column": 8
+            }
+          },
+          "type": "((Str) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "PrintT",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__out",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 53,
+                "column": 5
+              },
+              "to": {
+                "line": 53,
+                "column": 8
+              }
+            },
+            "type": "Bool",
+            "kind": "ValEx",
+            "value": {
+              "kind": "TlaBool",
+              "value": true
+            }
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 59,
+              "column": 1
+            },
+            "to": {
+              "line": 60,
+              "column": 10
+            }
+          },
+          "type": "((Bool, Str) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Assert",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__cond",
+              "arity": 0
+            },
+            {
+              "kind": "OperParam",
+              "name": "__out",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 60,
+                "column": 5
+              },
+              "to": {
+                "line": 60,
+                "column": 10
+              }
+            },
+            "type": "Bool",
+            "kind": "NameEx",
+            "name": "__cond"
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 65,
+              "column": 1
+            },
+            "to": {
+              "line": 68,
+              "column": 7
+            }
+          },
+          "type": "(() => Int)",
+          "kind": "TlaOperDecl",
+          "name": "JavaTime",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 68,
+                "column": 5
+              },
+              "to": {
+                "line": 68,
+                "column": 7
+              }
+            },
+            "type": "Int",
+            "kind": "ValEx",
+            "value": {
+              "kind": "TlaInt",
+              "value": 123
+            }
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 73,
+              "column": 1
+            },
+            "to": {
+              "line": 77,
+              "column": 32
+            }
+          },
+          "type": "((Int) => a129)",
+          "kind": "TlaOperDecl",
+          "name": "TLCGet",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__i",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 74,
+                "column": 5
+              },
+              "to": {
+                "line": 77,
+                "column": 32
+              }
+            },
+            "type": "a129",
+            "kind": "LetInEx",
+            "body": {
+              "source": {
+                "filename": "TLC",
+                "from": {
+                  "line": 77,
+                  "column": 5
+                },
+                "to": {
+                  "line": 77,
+                  "column": 32
+                }
+              },
+              "type": "a129",
+              "kind": "OperEx",
+              "oper": "CHOOSE3",
+              "args": [
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 77,
+                      "column": 5
+                    },
+                    "to": {
+                      "line": 77,
+                      "column": 32
+                    }
+                  },
+                  "type": "a129",
+                  "kind": "NameEx",
+                  "name": "__x"
+                },
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 77,
+                      "column": 20
+                    },
+                    "to": {
+                      "line": 77,
+                      "column": 26
+                    }
+                  },
+                  "type": "Set(a129)",
+                  "kind": "OperEx",
+                  "oper": "OPER_APP",
+                  "args": [
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 77,
+                          "column": 20
+                        },
+                        "to": {
+                          "line": 77,
+                          "column": 26
+                        }
+                      },
+                      "type": "(() => Set(a129))",
+                      "kind": "NameEx",
+                      "name": "__Empty"
+                    }
+                  ]
+                },
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 77,
+                      "column": 29
+                    },
+                    "to": {
+                      "line": 77,
+                      "column": 32
+                    }
+                  },
+                  "type": "Bool",
+                  "kind": "ValEx",
+                  "value": {
+                    "kind": "TlaBool",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "decls": [
+              {
+                "source": "UNKNOWN",
+                "type": "(() => Set(a131))",
+                "kind": "TlaOperDecl",
+                "name": "__Empty",
+                "formalParams": [
+                  
+                ],
+                "isRecursive": false,
+                "body": {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 75,
+                      "column": 20
+                    },
+                    "to": {
+                      "line": 75,
+                      "column": 21
+                    }
+                  },
+                  "type": "Set(a131)",
+                  "kind": "OperEx",
+                  "oper": "SET_ENUM",
+                  "args": [
+                    
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 83,
+              "column": 1
+            },
+            "to": {
+              "line": 84,
+              "column": 8
+            }
+          },
+          "type": "((Int, a126) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TLCSet",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__i",
+              "arity": 0
+            },
+            {
+              "kind": "OperParam",
+              "name": "__v",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 84,
+                "column": 5
+              },
+              "to": {
+                "line": 84,
+                "column": 8
+              }
+            },
+            "type": "Bool",
+            "kind": "ValEx",
+            "value": {
+              "kind": "TlaBool",
+              "value": true
+            }
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 87,
+              "column": 1
+            },
+            "to": {
+              "line": 89,
+              "column": 76
+            }
+          },
+          "type": "((Set(a116)) => Set((a116 -> a116)))",
+          "kind": "TlaOperDecl",
+          "name": "Permutations",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__S",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 89,
+                "column": 4
+              },
+              "to": {
+                "line": 89,
+                "column": 76
+              }
+            },
+            "type": "Set((a116 -> a116))",
+            "kind": "OperEx",
+            "oper": "SET_FILTER",
+            "args": [
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 89,
+                    "column": 4
+                  },
+                  "to": {
+                    "line": 89,
+                    "column": 76
+                  }
+                },
+                "type": "(a116 -> a116)",
+                "kind": "NameEx",
+                "name": "__f"
+              },
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 89,
+                    "column": 13
+                  },
+                  "to": {
+                    "line": 89,
+                    "column": 24
+                  }
+                },
+                "type": "Set((a116 -> a116))",
+                "kind": "OperEx",
+                "oper": "FUN_SET",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 89,
+                        "column": 14
+                      },
+                      "to": {
+                        "line": 89,
+                        "column": 16
+                      }
+                    },
+                    "type": "Set(a116)",
+                    "kind": "NameEx",
+                    "name": "__S"
+                  },
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 89,
+                        "column": 21
+                      },
+                      "to": {
+                        "line": 89,
+                        "column": 23
+                      }
+                    },
+                    "type": "Set(a116)",
+                    "kind": "NameEx",
+                    "name": "__S"
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 89,
+                    "column": 28
+                  },
+                  "to": {
+                    "line": 89,
+                    "column": 75
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "FORALL3",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 89,
+                        "column": 28
+                      },
+                      "to": {
+                        "line": 89,
+                        "column": 75
+                      }
+                    },
+                    "type": "a116",
+                    "kind": "NameEx",
+                    "name": "__w"
+                  },
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 89,
+                        "column": 39
+                      },
+                      "to": {
+                        "line": 89,
+                        "column": 41
+                      }
+                    },
+                    "type": "Set(a116)",
+                    "kind": "NameEx",
+                    "name": "__S"
+                  },
+                  {
+                    "source": {
+                      "filename": "TLC",
+                      "from": {
+                        "line": 89,
+                        "column": 45
+                      },
+                      "to": {
+                        "line": 89,
+                        "column": 75
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EXISTS3",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 89,
+                            "column": 45
+                          },
+                          "to": {
+                            "line": 89,
+                            "column": 75
+                          }
+                        },
+                        "type": "a116",
+                        "kind": "NameEx",
+                        "name": "__v"
+                      },
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 89,
+                            "column": 56
+                          },
+                          "to": {
+                            "line": 89,
+                            "column": 58
+                          }
+                        },
+                        "type": "Set(a116)",
+                        "kind": "NameEx",
+                        "name": "__S"
+                      },
+                      {
+                        "source": {
+                          "filename": "TLC",
+                          "from": {
+                            "line": 89,
+                            "column": 62
+                          },
+                          "to": {
+                            "line": 89,
+                            "column": 75
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EQ",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 89,
+                                "column": 62
+                              },
+                              "to": {
+                                "line": 89,
+                                "column": 69
+                              }
+                            },
+                            "type": "a116",
+                            "kind": "OperEx",
+                            "oper": "FUN_APP",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TLC",
+                                  "from": {
+                                    "line": 89,
+                                    "column": 62
+                                  },
+                                  "to": {
+                                    "line": 89,
+                                    "column": 64
+                                  }
+                                },
+                                "type": "(a116 -> a116)",
+                                "kind": "NameEx",
+                                "name": "__f"
+                              },
+                              {
+                                "source": {
+                                  "filename": "TLC",
+                                  "from": {
+                                    "line": 89,
+                                    "column": 66
+                                  },
+                                  "to": {
+                                    "line": 89,
+                                    "column": 68
+                                  }
+                                },
+                                "type": "a116",
+                                "kind": "NameEx",
+                                "name": "__v"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TLC",
+                              "from": {
+                                "line": 89,
+                                "column": 73
+                              },
+                              "to": {
+                                "line": 89,
+                                "column": 75
+                              }
+                            },
+                            "type": "a116",
+                            "kind": "NameEx",
+                            "name": "__w"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 105,
+              "column": 1
+            },
+            "to": {
+              "line": 106,
+              "column": 29
+            }
+          },
+          "type": "((Set(a113)) => a113)",
+          "kind": "TlaOperDecl",
+          "name": "RandomElement",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__s",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 106,
+                "column": 5
+              },
+              "to": {
+                "line": 106,
+                "column": 29
+              }
+            },
+            "type": "a113",
+            "kind": "OperEx",
+            "oper": "CHOOSE3",
+            "args": [
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 106,
+                    "column": 5
+                  },
+                  "to": {
+                    "line": 106,
+                    "column": 29
+                  }
+                },
+                "type": "a113",
+                "kind": "NameEx",
+                "name": "__x"
+              },
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 106,
+                    "column": 20
+                  },
+                  "to": {
+                    "line": 106,
+                    "column": 22
+                  }
+                },
+                "type": "Set(a113)",
+                "kind": "NameEx",
+                "name": "__s"
+              },
+              {
+                "source": {
+                  "filename": "TLC",
+                  "from": {
+                    "line": 106,
+                    "column": 26
+                  },
+                  "to": {
+                    "line": 106,
+                    "column": 29
+                  }
+                },
+                "type": "Bool",
+                "kind": "ValEx",
+                "value": {
+                  "kind": "TlaBool",
+                  "value": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 111,
+              "column": 1
+            },
+            "to": {
+              "line": 115,
+              "column": 32
+            }
+          },
+          "type": "(() => a107)",
+          "kind": "TlaOperDecl",
+          "name": "Any",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 112,
+                "column": 5
+              },
+              "to": {
+                "line": 115,
+                "column": 32
+              }
+            },
+            "type": "a107",
+            "kind": "LetInEx",
+            "body": {
+              "source": {
+                "filename": "TLC",
+                "from": {
+                  "line": 115,
+                  "column": 5
+                },
+                "to": {
+                  "line": 115,
+                  "column": 32
+                }
+              },
+              "type": "a107",
+              "kind": "OperEx",
+              "oper": "CHOOSE3",
+              "args": [
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 115,
+                      "column": 5
+                    },
+                    "to": {
+                      "line": 115,
+                      "column": 32
+                    }
+                  },
+                  "type": "a107",
+                  "kind": "NameEx",
+                  "name": "__x"
+                },
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 115,
+                      "column": 20
+                    },
+                    "to": {
+                      "line": 115,
+                      "column": 26
+                    }
+                  },
+                  "type": "Set(a107)",
+                  "kind": "OperEx",
+                  "oper": "OPER_APP",
+                  "args": [
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 115,
+                          "column": 20
+                        },
+                        "to": {
+                          "line": 115,
+                          "column": 26
+                        }
+                      },
+                      "type": "(() => Set(a107))",
+                      "kind": "NameEx",
+                      "name": "__Empty"
+                    }
+                  ]
+                },
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 115,
+                      "column": 29
+                    },
+                    "to": {
+                      "line": 115,
+                      "column": 32
+                    }
+                  },
+                  "type": "Bool",
+                  "kind": "ValEx",
+                  "value": {
+                    "kind": "TlaBool",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "decls": [
+              {
+                "source": "UNKNOWN",
+                "type": "(() => Set(a109))",
+                "kind": "TlaOperDecl",
+                "name": "__Empty",
+                "formalParams": [
+                  
+                ],
+                "isRecursive": false,
+                "body": {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 113,
+                      "column": 20
+                    },
+                    "to": {
+                      "line": 113,
+                      "column": 21
+                    }
+                  },
+                  "type": "Set(a109)",
+                  "kind": "OperEx",
+                  "oper": "SET_ENUM",
+                  "args": [
+                    
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 118,
+              "column": 1
+            },
+            "to": {
+              "line": 118,
+              "column": 19
+            }
+          },
+          "type": "((a105) => Str)",
+          "kind": "TlaOperDecl",
+          "name": "ToString",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__v",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 118,
+                "column": 18
+              },
+              "to": {
+                "line": 118,
+                "column": 19
+              }
+            },
+            "type": "Str",
+            "kind": "ValEx",
+            "value": {
+              "kind": "TlaStr",
+              "value": ""
+            }
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 123,
+              "column": 1
+            },
+            "to": {
+              "line": 123,
+              "column": 19
+            }
+          },
+          "type": "((a103) => a103)",
+          "kind": "TlaOperDecl",
+          "name": "TLCEval",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__v",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 123,
+                "column": 17
+              },
+              "to": {
+                "line": 123,
+                "column": 19
+              }
+            },
+            "type": "a103",
+            "kind": "NameEx",
+            "name": "__v"
+          }
+        },
+        {
+          "source": {
+            "filename": "TLC",
+            "from": {
+              "line": 94,
+              "column": 1
+            },
+            "to": {
+              "line": 100,
+              "column": 49
+            }
+          },
+          "type": "((Seq(a56), ((a56, a56) => Bool)) => (Int -> a56))",
+          "kind": "TlaOperDecl",
+          "name": "SortSeq",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "__s",
+              "arity": 0
+            },
+            {
+              "kind": "OperParam",
+              "name": "__Op",
+              "arity": 2
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TLC",
+              "from": {
+                "line": 96,
+                "column": 5
+              },
+              "to": {
+                "line": 100,
+                "column": 49
+              }
+            },
+            "type": "(Int -> a56)",
+            "kind": "LetInEx",
+            "body": {
+              "source": {
+                "filename": "TLC",
+                "from": {
+                  "line": 100,
+                  "column": 9
+                },
+                "to": {
+                  "line": 100,
+                  "column": 49
+                }
+              },
+              "type": "(Int -> a56)",
+              "kind": "OperEx",
+              "oper": "FUN_CTOR",
+              "args": [
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 100,
+                      "column": 33
+                    },
+                    "to": {
+                      "line": 100,
+                      "column": 48
+                    }
+                  },
+                  "type": "a56",
+                  "kind": "OperEx",
+                  "oper": "FUN_APP",
+                  "args": [
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 100,
+                          "column": 33
+                        },
+                        "to": {
+                          "line": 100,
+                          "column": 35
+                        }
+                      },
+                      "type": "Seq(a56)",
+                      "kind": "NameEx",
+                      "name": "__s"
+                    },
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 100,
+                          "column": 37
+                        },
+                        "to": {
+                          "line": 100,
+                          "column": 47
+                        }
+                      },
+                      "type": "Int",
+                      "kind": "OperEx",
+                      "oper": "FUN_APP",
+                      "args": [
+                        {
+                          "source": {
+                            "filename": "TLC",
+                            "from": {
+                              "line": 100,
+                              "column": 37
+                            },
+                            "to": {
+                              "line": 100,
+                              "column": 42
+                            }
+                          },
+                          "type": "(Int -> Int)",
+                          "kind": "OperEx",
+                          "oper": "OPER_APP",
+                          "args": [
+                            {
+                              "source": {
+                                "filename": "TLC",
+                                "from": {
+                                  "line": 100,
+                                  "column": 37
+                                },
+                                "to": {
+                                  "line": 100,
+                                  "column": 42
+                                }
+                              },
+                              "type": "(() => (Int -> Int))",
+                              "kind": "NameEx",
+                              "name": "__Perm"
+                            }
+                          ]
+                        },
+                        {
+                          "source": {
+                            "filename": "TLC",
+                            "from": {
+                              "line": 100,
+                              "column": 44
+                            },
+                            "to": {
+                              "line": 100,
+                              "column": 46
+                            }
+                          },
+                          "type": "Int",
+                          "kind": "NameEx",
+                          "name": "__i"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 100,
+                      "column": 9
+                    },
+                    "to": {
+                      "line": 100,
+                      "column": 49
+                    }
+                  },
+                  "type": "Int",
+                  "kind": "NameEx",
+                  "name": "__i"
+                },
+                {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 100,
+                      "column": 18
+                    },
+                    "to": {
+                      "line": 100,
+                      "column": 27
+                    }
+                  },
+                  "type": "Set(Int)",
+                  "kind": "OperEx",
+                  "oper": "DOMAIN",
+                  "args": [
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 100,
+                          "column": 25
+                        },
+                        "to": {
+                          "line": 100,
+                          "column": 27
+                        }
+                      },
+                      "type": "Seq(a56)",
+                      "kind": "NameEx",
+                      "name": "__s"
+                    }
+                  ]
+                }
+              ]
+            },
+            "decls": [
+              {
+                "source": "UNKNOWN",
+                "type": "(() => (Int -> Int))",
+                "kind": "TlaOperDecl",
+                "name": "__Perm",
+                "formalParams": [
+                  
+                ],
+                "isRecursive": false,
+                "body": {
+                  "source": {
+                    "filename": "TLC",
+                    "from": {
+                      "line": 96,
+                      "column": 19
+                    },
+                    "to": {
+                      "line": 99,
+                      "column": 46
+                    }
+                  },
+                  "type": "(Int -> Int)",
+                  "kind": "OperEx",
+                  "oper": "CHOOSE3",
+                  "args": [
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 96,
+                          "column": 19
+                        },
+                        "to": {
+                          "line": 99,
+                          "column": 46
+                        }
+                      },
+                      "type": "(Int -> Int)",
+                      "kind": "NameEx",
+                      "name": "__p"
+                    },
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 96,
+                          "column": 34
+                        },
+                        "to": {
+                          "line": 96,
+                          "column": 57
+                        }
+                      },
+                      "type": "Set((Int -> Int))",
+                      "kind": "OperEx",
+                      "oper": "OPER_APP",
+                      "args": [
+                        {
+                          "source": {
+                            "filename": "TLC",
+                            "from": {
+                              "line": 96,
+                              "column": 34
+                            },
+                            "to": {
+                              "line": 96,
+                              "column": 57
+                            }
+                          },
+                          "type": "((Set(Int)) => Set((Int -> Int)))",
+                          "kind": "NameEx",
+                          "name": "Permutations"
+                        },
+                        {
+                          "source": {
+                            "filename": "TLC",
+                            "from": {
+                              "line": 96,
+                              "column": 47
+                            },
+                            "to": {
+                              "line": 96,
+                              "column": 56
+                            }
+                          },
+                          "type": "Set(Int)",
+                          "kind": "OperEx",
+                          "oper": "DOMAIN",
+                          "args": [
+                            {
+                              "source": {
+                                "filename": "TLC",
+                                "from": {
+                                  "line": 96,
+                                  "column": 54
+                                },
+                                "to": {
+                                  "line": 96,
+                                  "column": 56
+                                }
+                              },
+                              "type": "Seq(a56)",
+                              "kind": "NameEx",
+                              "name": "__s"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "source": {
+                        "filename": "TLC",
+                        "from": {
+                          "line": 97,
+                          "column": 9
+                        },
+                        "to": {
+                          "line": 99,
+                          "column": 46
+                        }
+                      },
+                      "type": "Bool",
+                      "kind": "OperEx",
+                      "oper": "FORALL3",
+                      "args": [
+                        {
+                          "source": {
+                            "filename": "TLC",
+                            "from": {
+                              "line": 97,
+                              "column": 9
+                            },
+                            "to": {
+                              "line": 99,
+                              "column": 46
+                            }
+                          },
+                          "type": "Int",
+                          "kind": "NameEx",
+                          "name": "__i"
+                        },
+                        {
+                          "source": {
+                            "filename": "TLC",
+                            "from": {
+                              "line": 97,
+                              "column": 25
+                            },
+                            "to": {
+                              "line": 97,
+                              "column": 34
+                            }
+                          },
+                          "type": "Set(Int)",
+                          "kind": "OperEx",
+                          "oper": "DOMAIN",
+                          "args": [
+                            {
+                              "source": {
+                                "filename": "TLC",
+                                "from": {
+                                  "line": 97,
+                                  "column": 32
+                                },
+                                "to": {
+                                  "line": 97,
+                                  "column": 34
+                                }
+                              },
+                              "type": "Seq(a56)",
+                              "kind": "NameEx",
+                              "name": "__s"
+                            }
+                          ]
+                        },
+                        {
+                          "source": {
+                            "filename": "TLC",
+                            "from": {
+                              "line": 97,
+                              "column": 9
+                            },
+                            "to": {
+                              "line": 99,
+                              "column": 46
+                            }
+                          },
+                          "type": "Bool",
+                          "kind": "OperEx",
+                          "oper": "FORALL3",
+                          "args": [
+                            {
+                              "source": {
+                                "filename": "TLC",
+                                "from": {
+                                  "line": 97,
+                                  "column": 9
+                                },
+                                "to": {
+                                  "line": 99,
+                                  "column": 46
+                                }
+                              },
+                              "type": "Int",
+                              "kind": "NameEx",
+                              "name": "__j"
+                            },
+                            {
+                              "source": {
+                                "filename": "TLC",
+                                "from": {
+                                  "line": 97,
+                                  "column": 25
+                                },
+                                "to": {
+                                  "line": 97,
+                                  "column": 34
+                                }
+                              },
+                              "type": "Set(Int)",
+                              "kind": "OperEx",
+                              "oper": "DOMAIN",
+                              "args": [
+                                {
+                                  "source": {
+                                    "filename": "TLC",
+                                    "from": {
+                                      "line": 97,
+                                      "column": 32
+                                    },
+                                    "to": {
+                                      "line": 97,
+                                      "column": 34
+                                    }
+                                  },
+                                  "type": "Seq(a56)",
+                                  "kind": "NameEx",
+                                  "name": "__s"
+                                }
+                              ]
+                            },
+                            {
+                              "source": {
+                                "filename": "TLC",
+                                "from": {
+                                  "line": 98,
+                                  "column": 13
+                                },
+                                "to": {
+                                  "line": 99,
+                                  "column": 46
+                                }
+                              },
+                              "type": "Bool",
+                              "kind": "OperEx",
+                              "oper": "OR",
+                              "args": [
+                                {
+                                  "source": {
+                                    "filename": "TLC",
+                                    "from": {
+                                      "line": 98,
+                                      "column": 16
+                                    },
+                                    "to": {
+                                      "line": 98,
+                                      "column": 64
+                                    }
+                                  },
+                                  "type": "Bool",
+                                  "kind": "OperEx",
+                                  "oper": "IMPLIES",
+                                  "args": [
+                                    {
+                                      "source": {
+                                        "filename": "TLC",
+                                        "from": {
+                                          "line": 98,
+                                          "column": 17
+                                        },
+                                        "to": {
+                                          "line": 98,
+                                          "column": 25
+                                        }
+                                      },
+                                      "type": "Bool",
+                                      "kind": "OperEx",
+                                      "oper": "LT",
+                                      "args": [
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 98,
+                                              "column": 17
+                                            },
+                                            "to": {
+                                              "line": 98,
+                                              "column": 19
+                                            }
+                                          },
+                                          "type": "Int",
+                                          "kind": "NameEx",
+                                          "name": "__i"
+                                        },
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 98,
+                                              "column": 23
+                                            },
+                                            "to": {
+                                              "line": 98,
+                                              "column": 25
+                                            }
+                                          },
+                                          "type": "Int",
+                                          "kind": "NameEx",
+                                          "name": "__j"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "source": {
+                                        "filename": "TLC",
+                                        "from": {
+                                          "line": 98,
+                                          "column": 31
+                                        },
+                                        "to": {
+                                          "line": 98,
+                                          "column": 64
+                                        }
+                                      },
+                                      "type": "Bool",
+                                      "kind": "OperEx",
+                                      "oper": "OPER_APP",
+                                      "args": [
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 98,
+                                              "column": 31
+                                            },
+                                            "to": {
+                                              "line": 98,
+                                              "column": 64
+                                            }
+                                          },
+                                          "type": "((a56, a56) => Bool)",
+                                          "kind": "NameEx",
+                                          "name": "__Op"
+                                        },
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 98,
+                                              "column": 36
+                                            },
+                                            "to": {
+                                              "line": 98,
+                                              "column": 48
+                                            }
+                                          },
+                                          "type": "a56",
+                                          "kind": "OperEx",
+                                          "oper": "FUN_APP",
+                                          "args": [
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 98,
+                                                  "column": 36
+                                                },
+                                                "to": {
+                                                  "line": 98,
+                                                  "column": 38
+                                                }
+                                              },
+                                              "type": "Seq(a56)",
+                                              "kind": "NameEx",
+                                              "name": "__s"
+                                            },
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 98,
+                                                  "column": 40
+                                                },
+                                                "to": {
+                                                  "line": 98,
+                                                  "column": 47
+                                                }
+                                              },
+                                              "type": "Int",
+                                              "kind": "OperEx",
+                                              "oper": "FUN_APP",
+                                              "args": [
+                                                {
+                                                  "source": {
+                                                    "filename": "TLC",
+                                                    "from": {
+                                                      "line": 98,
+                                                      "column": 40
+                                                    },
+                                                    "to": {
+                                                      "line": 98,
+                                                      "column": 42
+                                                    }
+                                                  },
+                                                  "type": "(Int -> Int)",
+                                                  "kind": "NameEx",
+                                                  "name": "__p"
+                                                },
+                                                {
+                                                  "source": {
+                                                    "filename": "TLC",
+                                                    "from": {
+                                                      "line": 98,
+                                                      "column": 44
+                                                    },
+                                                    "to": {
+                                                      "line": 98,
+                                                      "column": 46
+                                                    }
+                                                  },
+                                                  "type": "Int",
+                                                  "kind": "NameEx",
+                                                  "name": "__i"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 98,
+                                              "column": 51
+                                            },
+                                            "to": {
+                                              "line": 98,
+                                              "column": 63
+                                            }
+                                          },
+                                          "type": "a56",
+                                          "kind": "OperEx",
+                                          "oper": "FUN_APP",
+                                          "args": [
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 98,
+                                                  "column": 51
+                                                },
+                                                "to": {
+                                                  "line": 98,
+                                                  "column": 53
+                                                }
+                                              },
+                                              "type": "Seq(a56)",
+                                              "kind": "NameEx",
+                                              "name": "__s"
+                                            },
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 98,
+                                                  "column": 55
+                                                },
+                                                "to": {
+                                                  "line": 98,
+                                                  "column": 62
+                                                }
+                                              },
+                                              "type": "Int",
+                                              "kind": "OperEx",
+                                              "oper": "FUN_APP",
+                                              "args": [
+                                                {
+                                                  "source": {
+                                                    "filename": "TLC",
+                                                    "from": {
+                                                      "line": 98,
+                                                      "column": 55
+                                                    },
+                                                    "to": {
+                                                      "line": 98,
+                                                      "column": 57
+                                                    }
+                                                  },
+                                                  "type": "(Int -> Int)",
+                                                  "kind": "NameEx",
+                                                  "name": "__p"
+                                                },
+                                                {
+                                                  "source": {
+                                                    "filename": "TLC",
+                                                    "from": {
+                                                      "line": 98,
+                                                      "column": 59
+                                                    },
+                                                    "to": {
+                                                      "line": 98,
+                                                      "column": 61
+                                                    }
+                                                  },
+                                                  "type": "Int",
+                                                  "kind": "NameEx",
+                                                  "name": "__j"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "source": {
+                                    "filename": "TLC",
+                                    "from": {
+                                      "line": 99,
+                                      "column": 17
+                                    },
+                                    "to": {
+                                      "line": 99,
+                                      "column": 45
+                                    }
+                                  },
+                                  "type": "Bool",
+                                  "kind": "OperEx",
+                                  "oper": "EQ",
+                                  "args": [
+                                    {
+                                      "source": {
+                                        "filename": "TLC",
+                                        "from": {
+                                          "line": 99,
+                                          "column": 17
+                                        },
+                                        "to": {
+                                          "line": 99,
+                                          "column": 29
+                                        }
+                                      },
+                                      "type": "a56",
+                                      "kind": "OperEx",
+                                      "oper": "FUN_APP",
+                                      "args": [
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 99,
+                                              "column": 17
+                                            },
+                                            "to": {
+                                              "line": 99,
+                                              "column": 19
+                                            }
+                                          },
+                                          "type": "Seq(a56)",
+                                          "kind": "NameEx",
+                                          "name": "__s"
+                                        },
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 99,
+                                              "column": 21
+                                            },
+                                            "to": {
+                                              "line": 99,
+                                              "column": 28
+                                            }
+                                          },
+                                          "type": "Int",
+                                          "kind": "OperEx",
+                                          "oper": "FUN_APP",
+                                          "args": [
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 99,
+                                                  "column": 21
+                                                },
+                                                "to": {
+                                                  "line": 99,
+                                                  "column": 23
+                                                }
+                                              },
+                                              "type": "(Int -> Int)",
+                                              "kind": "NameEx",
+                                              "name": "__p"
+                                            },
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 99,
+                                                  "column": 25
+                                                },
+                                                "to": {
+                                                  "line": 99,
+                                                  "column": 27
+                                                }
+                                              },
+                                              "type": "Int",
+                                              "kind": "NameEx",
+                                              "name": "__i"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "source": {
+                                        "filename": "TLC",
+                                        "from": {
+                                          "line": 99,
+                                          "column": 33
+                                        },
+                                        "to": {
+                                          "line": 99,
+                                          "column": 45
+                                        }
+                                      },
+                                      "type": "a56",
+                                      "kind": "OperEx",
+                                      "oper": "FUN_APP",
+                                      "args": [
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 99,
+                                              "column": 33
+                                            },
+                                            "to": {
+                                              "line": 99,
+                                              "column": 35
+                                            }
+                                          },
+                                          "type": "Seq(a56)",
+                                          "kind": "NameEx",
+                                          "name": "__s"
+                                        },
+                                        {
+                                          "source": {
+                                            "filename": "TLC",
+                                            "from": {
+                                              "line": 99,
+                                              "column": 37
+                                            },
+                                            "to": {
+                                              "line": 99,
+                                              "column": 44
+                                            }
+                                          },
+                                          "type": "Int",
+                                          "kind": "OperEx",
+                                          "oper": "FUN_APP",
+                                          "args": [
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 99,
+                                                  "column": 37
+                                                },
+                                                "to": {
+                                                  "line": 99,
+                                                  "column": 39
+                                                }
+                                              },
+                                              "type": "(Int -> Int)",
+                                              "kind": "NameEx",
+                                              "name": "__p"
+                                            },
+                                            {
+                                              "source": {
+                                                "filename": "TLC",
+                                                "from": {
+                                                  "line": 99,
+                                                  "column": 41
+                                                },
+                                                "to": {
+                                                  "line": 99,
+                                                  "column": 43
+                                                }
+                                              },
+                                              "type": "Int",
+                                              "kind": "NameEx",
+                                              "name": "__j"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 12,
+              "column": 1
+            },
+            "to": {
+              "line": 16,
+              "column": 69
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TCTypeOK",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 16,
+                "column": 3
+              },
+              "to": {
+                "line": 16,
+                "column": 69
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "SET_IN",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 16,
+                    "column": 3
+                  },
+                  "to": {
+                    "line": 16,
+                    "column": 9
+                  }
+                },
+                "type": "(RM -> Str)",
+                "kind": "NameEx",
+                "name": "rmState"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 16,
+                    "column": 15
+                  },
+                  "to": {
+                    "line": 16,
+                    "column": 69
+                  }
+                },
+                "type": "Set((RM -> Str))",
+                "kind": "OperEx",
+                "oper": "FUN_SET",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 16,
+                        "column": 16
+                      },
+                      "to": {
+                        "line": 16,
+                        "column": 17
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 16,
+                        "column": 22
+                      },
+                      "to": {
+                        "line": 16,
+                        "column": 68
+                      }
+                    },
+                    "type": "Set(Str)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 23
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 31
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "working"
+                        }
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 34
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 43
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "prepared"
+                        }
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 46
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 56
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "committed"
+                        }
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 16,
+                            "column": 59
+                          },
+                          "to": {
+                            "line": 16,
+                            "column": 67
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "aborted"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 18,
+              "column": 1
+            },
+            "to": {
+              "line": 18,
+              "column": 45
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Init",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 18,
+                "column": 11
+              },
+              "to": {
+                "line": 18,
+                "column": 45
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "EQ",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 18,
+                    "column": 11
+                  },
+                  "to": {
+                    "line": 18,
+                    "column": 17
+                  }
+                },
+                "type": "(RM -> Str)",
+                "kind": "NameEx",
+                "name": "rmState"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 18,
+                    "column": 21
+                  },
+                  "to": {
+                    "line": 18,
+                    "column": 45
+                  }
+                },
+                "type": "(RM -> Str)",
+                "kind": "OperEx",
+                "oper": "FUN_CTOR",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 18,
+                        "column": 36
+                      },
+                      "to": {
+                        "line": 18,
+                        "column": 44
+                      }
+                    },
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "working"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 18,
+                        "column": 21
+                      },
+                      "to": {
+                        "line": 18,
+                        "column": 45
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "rm"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 18,
+                        "column": 29
+                      },
+                      "to": {
+                        "line": 18,
+                        "column": 30
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 23,
+              "column": 1
+            },
+            "to": {
+              "line": 23,
+              "column": 69
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "canCommit",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 23,
+                "column": 14
+              },
+              "to": {
+                "line": 23,
+                "column": 69
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "FORALL3",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 23,
+                    "column": 14
+                  },
+                  "to": {
+                    "line": 23,
+                    "column": 69
+                  }
+                },
+                "type": "RM",
+                "kind": "NameEx",
+                "name": "rm"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 23,
+                    "column": 24
+                  },
+                  "to": {
+                    "line": 23,
+                    "column": 25
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 23,
+                    "column": 29
+                  },
+                  "to": {
+                    "line": 23,
+                    "column": 69
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 23,
+                        "column": 29
+                      },
+                      "to": {
+                        "line": 23,
+                        "column": 39
+                      }
+                    },
+                    "type": "Str",
+                    "kind": "OperEx",
+                    "oper": "FUN_APP",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 23,
+                            "column": 29
+                          },
+                          "to": {
+                            "line": 23,
+                            "column": 35
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 23,
+                            "column": 37
+                          },
+                          "to": {
+                            "line": 23,
+                            "column": 38
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 23,
+                        "column": 45
+                      },
+                      "to": {
+                        "line": 23,
+                        "column": 69
+                      }
+                    },
+                    "type": "Set(Str)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 23,
+                            "column": 46
+                          },
+                          "to": {
+                            "line": 23,
+                            "column": 55
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "prepared"
+                        }
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 23,
+                            "column": 58
+                          },
+                          "to": {
+                            "line": 23,
+                            "column": 68
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "committed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 28,
+              "column": 1
+            },
+            "to": {
+              "line": 28,
+              "column": 56
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "notCommitted",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 28,
+                "column": 17
+              },
+              "to": {
+                "line": 28,
+                "column": 56
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "FORALL3",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 28,
+                    "column": 17
+                  },
+                  "to": {
+                    "line": 28,
+                    "column": 56
+                  }
+                },
+                "type": "RM",
+                "kind": "NameEx",
+                "name": "rm"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 28,
+                    "column": 27
+                  },
+                  "to": {
+                    "line": 28,
+                    "column": 28
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 28,
+                    "column": 32
+                  },
+                  "to": {
+                    "line": 28,
+                    "column": 56
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "NE",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 28,
+                        "column": 32
+                      },
+                      "to": {
+                        "line": 28,
+                        "column": 42
+                      }
+                    },
+                    "type": "Str",
+                    "kind": "OperEx",
+                    "oper": "FUN_APP",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 28,
+                            "column": 32
+                          },
+                          "to": {
+                            "line": 28,
+                            "column": 38
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 28,
+                            "column": 40
+                          },
+                          "to": {
+                            "line": 28,
+                            "column": 41
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 28,
+                        "column": 46
+                      },
+                      "to": {
+                        "line": 28,
+                        "column": 56
+                      }
+                    },
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "committed"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 38,
+              "column": 1
+            },
+            "to": {
+              "line": 39,
+              "column": 64
+            }
+          },
+          "type": "((RM) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Prepare",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "rm",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 38,
+                "column": 16
+              },
+              "to": {
+                "line": 39,
+                "column": 64
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 38,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 38,
+                    "column": 41
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 38,
+                        "column": 19
+                      },
+                      "to": {
+                        "line": 38,
+                        "column": 29
+                      }
+                    },
+                    "type": "Str",
+                    "kind": "OperEx",
+                    "oper": "FUN_APP",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 38,
+                            "column": 19
+                          },
+                          "to": {
+                            "line": 38,
+                            "column": 25
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 38,
+                            "column": 27
+                          },
+                          "to": {
+                            "line": 38,
+                            "column": 28
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 38,
+                        "column": 33
+                      },
+                      "to": {
+                        "line": 38,
+                        "column": 41
+                      }
+                    },
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "working"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 39,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 39,
+                    "column": 64
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 39,
+                        "column": 19
+                      },
+                      "to": {
+                        "line": 39,
+                        "column": 26
+                      }
+                    },
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 39,
+                            "column": 19
+                          },
+                          "to": {
+                            "line": 39,
+                            "column": 25
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 39,
+                        "column": 30
+                      },
+                      "to": {
+                        "line": 39,
+                        "column": 64
+                      }
+                    },
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "EXCEPT",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 39,
+                            "column": 31
+                          },
+                          "to": {
+                            "line": 39,
+                            "column": 37
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 39,
+                            "column": 46
+                          },
+                          "to": {
+                            "line": 39,
+                            "column": 63
+                          }
+                        },
+                        "type": "<<RM>>",
+                        "kind": "OperEx",
+                        "oper": "TUPLE",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 39,
+                                "column": 48
+                              },
+                              "to": {
+                                "line": 39,
+                                "column": 49
+                              }
+                            },
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 39,
+                            "column": 54
+                          },
+                          "to": {
+                            "line": 39,
+                            "column": 63
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "prepared"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 61,
+              "column": 1
+            },
+            "to": {
+              "line": 67,
+              "column": 54
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TCConsistent",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 66,
+                "column": 3
+              },
+              "to": {
+                "line": 67,
+                "column": 54
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "FORALL3",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 66,
+                    "column": 3
+                  },
+                  "to": {
+                    "line": 67,
+                    "column": 54
+                  }
+                },
+                "type": "RM",
+                "kind": "NameEx",
+                "name": "rm1"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 66,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 66,
+                    "column": 20
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 66,
+                    "column": 3
+                  },
+                  "to": {
+                    "line": 67,
+                    "column": 54
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "FORALL3",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 66,
+                        "column": 3
+                      },
+                      "to": {
+                        "line": 67,
+                        "column": 54
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "rm2"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 66,
+                        "column": 19
+                      },
+                      "to": {
+                        "line": 66,
+                        "column": 20
+                      }
+                    },
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 66,
+                        "column": 24
+                      },
+                      "to": {
+                        "line": 67,
+                        "column": 54
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "NOT",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 66,
+                            "column": 26
+                          },
+                          "to": {
+                            "line": 67,
+                            "column": 54
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "AND",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 66,
+                                "column": 29
+                              },
+                              "to": {
+                                "line": 66,
+                                "column": 52
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "EQ",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 66,
+                                    "column": 29
+                                  },
+                                  "to": {
+                                    "line": 66,
+                                    "column": 40
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "OperEx",
+                                "oper": "FUN_APP",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 66,
+                                        "column": 29
+                                      },
+                                      "to": {
+                                        "line": 66,
+                                        "column": 35
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 66,
+                                        "column": 37
+                                      },
+                                      "to": {
+                                        "line": 66,
+                                        "column": 39
+                                      }
+                                    },
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm1"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 66,
+                                    "column": 44
+                                  },
+                                  "to": {
+                                    "line": 66,
+                                    "column": 52
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "aborted"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 67,
+                                "column": 29
+                              },
+                              "to": {
+                                "line": 67,
+                                "column": 54
+                              }
+                            },
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "EQ",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 67,
+                                    "column": 29
+                                  },
+                                  "to": {
+                                    "line": 67,
+                                    "column": 40
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "OperEx",
+                                "oper": "FUN_APP",
+                                "args": [
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 67,
+                                        "column": 29
+                                      },
+                                      "to": {
+                                        "line": 67,
+                                        "column": 35
+                                      }
+                                    },
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": {
+                                      "filename": "TCommit",
+                                      "from": {
+                                        "line": 67,
+                                        "column": 37
+                                      },
+                                      "to": {
+                                        "line": 67,
+                                        "column": 39
+                                      }
+                                    },
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm2"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 67,
+                                    "column": 44
+                                  },
+                                  "to": {
+                                    "line": 67,
+                                    "column": 54
+                                  }
+                                },
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "committed"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 74,
+              "column": 1
+            },
+            "to": {
+              "line": 74,
+              "column": 28
+            }
+          },
+          "type": "(() => Set((RM -> RM)))",
+          "kind": "TlaOperDecl",
+          "name": "Symmetry",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 74,
+                "column": 13
+              },
+              "to": {
+                "line": 74,
+                "column": 28
+              }
+            },
+            "type": "Set((RM -> RM))",
+            "kind": "OperEx",
+            "oper": "OPER_APP",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 74,
+                    "column": 13
+                  },
+                  "to": {
+                    "line": 74,
+                    "column": 28
+                  }
+                },
+                "type": "((Set(RM)) => Set((RM -> RM)))",
+                "kind": "NameEx",
+                "name": "Permutations"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 74,
+                    "column": 26
+                  },
+                  "to": {
+                    "line": 74,
+                    "column": 27
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 77,
+              "column": 1
+            },
+            "to": {
+              "line": 78,
+              "column": 41
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "InitializeRM",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 78,
+                "column": 3
+              },
+              "to": {
+                "line": 78,
+                "column": 41
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "EQ",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 78,
+                    "column": 3
+                  },
+                  "to": {
+                    "line": 78,
+                    "column": 4
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 78,
+                    "column": 8
+                  },
+                  "to": {
+                    "line": 78,
+                    "column": 41
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "OperEx",
+                "oper": "SET_ENUM",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 9
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 18
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r1_OF_RM"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 20
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 29
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r2_OF_RM"
+                    }
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 78,
+                        "column": 31
+                      },
+                      "to": {
+                        "line": 78,
+                        "column": 40
+                      }
+                    },
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r3_OF_RM"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 41,
+              "column": 1
+            },
+            "to": {
+              "line": 46,
+              "column": 66
+            }
+          },
+          "type": "((RM) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Decide",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "rm",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 41,
+                "column": 16
+              },
+              "to": {
+                "line": 46,
+                "column": 66
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "OR",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 41,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 43,
+                    "column": 68
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "AND",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 41,
+                        "column": 22
+                      },
+                      "to": {
+                        "line": 41,
+                        "column": 45
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EQ",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 41,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 41,
+                            "column": 32
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "OperEx",
+                        "oper": "FUN_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 41,
+                                "column": 22
+                              },
+                              "to": {
+                                "line": 41,
+                                "column": 28
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 41,
+                                "column": 30
+                              },
+                              "to": {
+                                "line": 41,
+                                "column": 31
+                              }
+                            },
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 41,
+                            "column": 36
+                          },
+                          "to": {
+                            "line": 41,
+                            "column": 45
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "prepared"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 42,
+                        "column": 22
+                      },
+                      "to": {
+                        "line": 42,
+                        "column": 30
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "OPER_APP",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 42,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 42,
+                            "column": 30
+                          }
+                        },
+                        "type": "(() => Bool)",
+                        "kind": "NameEx",
+                        "name": "canCommit"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 43,
+                        "column": 22
+                      },
+                      "to": {
+                        "line": 43,
+                        "column": 68
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EQ",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 43,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 43,
+                            "column": 29
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "OperEx",
+                        "oper": "PRIME",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 43,
+                                "column": 22
+                              },
+                              "to": {
+                                "line": 43,
+                                "column": 28
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 43,
+                            "column": 33
+                          },
+                          "to": {
+                            "line": 43,
+                            "column": 68
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "OperEx",
+                        "oper": "EXCEPT",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 43,
+                                "column": 34
+                              },
+                              "to": {
+                                "line": 43,
+                                "column": 40
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 43,
+                                "column": 49
+                              },
+                              "to": {
+                                "line": 43,
+                                "column": 67
+                              }
+                            },
+                            "type": "<<RM>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 43,
+                                    "column": 51
+                                  },
+                                  "to": {
+                                    "line": 43,
+                                    "column": 52
+                                  }
+                                },
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "rm"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 43,
+                                "column": 57
+                              },
+                              "to": {
+                                "line": 43,
+                                "column": 67
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "committed"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 44,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 46,
+                    "column": 66
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "AND",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 44,
+                        "column": 22
+                      },
+                      "to": {
+                        "line": 44,
+                        "column": 60
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "SET_IN",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 44,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 44,
+                            "column": 32
+                          }
+                        },
+                        "type": "Str",
+                        "kind": "OperEx",
+                        "oper": "FUN_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 44,
+                                "column": 22
+                              },
+                              "to": {
+                                "line": 44,
+                                "column": 28
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 44,
+                                "column": 30
+                              },
+                              "to": {
+                                "line": 44,
+                                "column": 31
+                              }
+                            },
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 44,
+                            "column": 38
+                          },
+                          "to": {
+                            "line": 44,
+                            "column": 60
+                          }
+                        },
+                        "type": "Set(Str)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 44,
+                                "column": 39
+                              },
+                              "to": {
+                                "line": 44,
+                                "column": 47
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "working"
+                            }
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 44,
+                                "column": 50
+                              },
+                              "to": {
+                                "line": 44,
+                                "column": 59
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "prepared"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 45,
+                        "column": 22
+                      },
+                      "to": {
+                        "line": 45,
+                        "column": 33
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "OPER_APP",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 45,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 45,
+                            "column": 33
+                          }
+                        },
+                        "type": "(() => Bool)",
+                        "kind": "NameEx",
+                        "name": "notCommitted"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 46,
+                        "column": 22
+                      },
+                      "to": {
+                        "line": 46,
+                        "column": 66
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "EQ",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 46,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 46,
+                            "column": 29
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "OperEx",
+                        "oper": "PRIME",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 46,
+                                "column": 22
+                              },
+                              "to": {
+                                "line": 46,
+                                "column": 28
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 46,
+                            "column": 33
+                          },
+                          "to": {
+                            "line": 46,
+                            "column": 66
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "OperEx",
+                        "oper": "EXCEPT",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 46,
+                                "column": 34
+                              },
+                              "to": {
+                                "line": 46,
+                                "column": 40
+                              }
+                            },
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 46,
+                                "column": 49
+                              },
+                              "to": {
+                                "line": 46,
+                                "column": 65
+                              }
+                            },
+                            "type": "<<RM>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "source": {
+                                  "filename": "TCommit",
+                                  "from": {
+                                    "line": 46,
+                                    "column": 51
+                                  },
+                                  "to": {
+                                    "line": 46,
+                                    "column": 52
+                                  }
+                                },
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "rm"
+                              }
+                            ]
+                          },
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 46,
+                                "column": 57
+                              },
+                              "to": {
+                                "line": 46,
+                                "column": 65
+                              }
+                            },
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "aborted"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 80,
+              "column": 1
+            },
+            "to": {
+              "line": 80,
+              "column": 29
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "P",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 80,
+                "column": 6
+              },
+              "to": {
+                "line": 80,
+                "column": 29
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 80,
+                    "column": 6
+                  },
+                  "to": {
+                    "line": 80,
+                    "column": 13
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OPER_APP",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 6
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 13
+                      }
+                    },
+                    "type": "(() => Bool)",
+                    "kind": "NameEx",
+                    "name": "TCTypeOK"
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 80,
+                    "column": 18
+                  },
+                  "to": {
+                    "line": 80,
+                    "column": 29
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OPER_APP",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 80,
+                        "column": 18
+                      },
+                      "to": {
+                        "line": 80,
+                        "column": 29
+                      }
+                    },
+                    "type": "(() => Bool)",
+                    "kind": "NameEx",
+                    "name": "TCConsistent"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 48,
+              "column": 1
+            },
+            "to": {
+              "line": 48,
+              "column": 48
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Next",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 48,
+                "column": 9
+              },
+              "to": {
+                "line": 48,
+                "column": 48
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "EXISTS3",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 48,
+                    "column": 9
+                  },
+                  "to": {
+                    "line": 48,
+                    "column": 48
+                  }
+                },
+                "type": "RM",
+                "kind": "NameEx",
+                "name": "rm"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 48,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 48,
+                    "column": 20
+                  }
+                },
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 48,
+                    "column": 24
+                  },
+                  "to": {
+                    "line": 48,
+                    "column": 48
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OR",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 48,
+                        "column": 24
+                      },
+                      "to": {
+                        "line": 48,
+                        "column": 34
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "OPER_APP",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 24
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 34
+                          }
+                        },
+                        "type": "((RM) => Bool)",
+                        "kind": "NameEx",
+                        "name": "Prepare"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 32
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 33
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  },
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 48,
+                        "column": 39
+                      },
+                      "to": {
+                        "line": 48,
+                        "column": 48
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "OPER_APP",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 39
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 48
+                          }
+                        },
+                        "type": "((RM) => Bool)",
+                        "kind": "NameEx",
+                        "name": "Decide"
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 48,
+                            "column": 46
+                          },
+                          "to": {
+                            "line": 48,
+                            "column": 47
+                          }
+                        },
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": {
+            "filename": "TCommit",
+            "from": {
+              "line": 53,
+              "column": 1
+            },
+            "to": {
+              "line": 53,
+              "column": 34
+            }
+          },
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TCSpec",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": {
+              "filename": "TCommit",
+              "from": {
+                "line": 53,
+                "column": 11
+              },
+              "to": {
+                "line": 53,
+                "column": 34
+              }
+            },
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 53,
+                    "column": 11
+                  },
+                  "to": {
+                    "line": 53,
+                    "column": 14
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OPER_APP",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 53,
+                        "column": 11
+                      },
+                      "to": {
+                        "line": 53,
+                        "column": 14
+                      }
+                    },
+                    "type": "(() => Bool)",
+                    "kind": "NameEx",
+                    "name": "Init"
+                  }
+                ]
+              },
+              {
+                "source": {
+                  "filename": "TCommit",
+                  "from": {
+                    "line": 53,
+                    "column": 19
+                  },
+                  "to": {
+                    "line": 53,
+                    "column": 34
+                  }
+                },
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "GLOBALLY",
+                "args": [
+                  {
+                    "source": {
+                      "filename": "TCommit",
+                      "from": {
+                        "line": 53,
+                        "column": 21
+                      },
+                      "to": {
+                        "line": 53,
+                        "column": 34
+                      }
+                    },
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "STUTTER",
+                    "args": [
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 53,
+                            "column": 22
+                          },
+                          "to": {
+                            "line": 53,
+                            "column": 25
+                          }
+                        },
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "OPER_APP",
+                        "args": [
+                          {
+                            "source": {
+                              "filename": "TCommit",
+                              "from": {
+                                "line": 53,
+                                "column": 22
+                              },
+                              "to": {
+                                "line": 53,
+                                "column": 25
+                              }
+                            },
+                            "type": "(() => Bool)",
+                            "kind": "NameEx",
+                            "name": "Next"
+                          }
+                        ]
+                      },
+                      {
+                        "source": {
+                          "filename": "TCommit",
+                          "from": {
+                            "line": 53,
+                            "column": 28
+                          },
+                          "to": {
+                            "line": 53,
+                            "column": 34
+                          }
+                        },
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

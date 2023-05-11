@@ -1,0 +1,653 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache.informal.systems/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "counterexample",
+      "declarations": [
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "ConstInit",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(PROCSET)",
+                    "kind": "NameEx",
+                    "name": "ProcSet"
+                  },
+                  {
+                    "type": "Set(PROCSET)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "type": "PROCSET",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "p0_OF_PROCSET"
+                        }
+                      },
+                      {
+                        "type": "PROCSET",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "p1_OF_PROCSET"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "State0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(PROCSET)",
+                    "kind": "NameEx",
+                    "name": "ProcSet"
+                  },
+                  {
+                    "type": "Set(PROCSET)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "type": "PROCSET",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "p0_OF_PROCSET"
+                        }
+                      },
+                      {
+                        "type": "PROCSET",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "p1_OF_PROCSET"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "(PROCSET -> Bool)",
+                    "kind": "NameEx",
+                    "name": "flag"
+                  },
+                  {
+                    "type": "(PROCSET -> Bool)",
+                    "kind": "OperEx",
+                    "oper": "Apalache!SetAsFun",
+                    "args": [
+                      {
+                        "type": "Set(<<PROCSET, Bool>>)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "type": "<<PROCSET, Bool>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p0_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Bool",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaBool",
+                                  "value": false
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "<<PROCSET, Bool>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p1_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Bool",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaBool",
+                                  "value": false
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "(PROCSET -> Str)",
+                    "kind": "NameEx",
+                    "name": "pc"
+                  },
+                  {
+                    "type": "(PROCSET -> Str)",
+                    "kind": "OperEx",
+                    "oper": "Apalache!SetAsFun",
+                    "args": [
+                      {
+                        "type": "Set(<<PROCSET, Str>>)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "type": "<<PROCSET, Str>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p0_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "cs"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "<<PROCSET, Str>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p1_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "a4"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "PROCSET",
+                    "kind": "NameEx",
+                    "name": "turn"
+                  },
+                  {
+                    "type": "PROCSET",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "p0_OF_PROCSET"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "State1",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(PROCSET)",
+                    "kind": "NameEx",
+                    "name": "ProcSet"
+                  },
+                  {
+                    "type": "Set(PROCSET)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "type": "PROCSET",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "p0_OF_PROCSET"
+                        }
+                      },
+                      {
+                        "type": "PROCSET",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "p1_OF_PROCSET"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "(PROCSET -> Bool)",
+                    "kind": "NameEx",
+                    "name": "flag"
+                  },
+                  {
+                    "type": "(PROCSET -> Bool)",
+                    "kind": "OperEx",
+                    "oper": "Apalache!SetAsFun",
+                    "args": [
+                      {
+                        "type": "Set(<<PROCSET, Bool>>)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "type": "<<PROCSET, Bool>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p0_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Bool",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaBool",
+                                  "value": false
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "<<PROCSET, Bool>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p1_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Bool",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaBool",
+                                  "value": false
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "(PROCSET -> Str)",
+                    "kind": "NameEx",
+                    "name": "pc"
+                  },
+                  {
+                    "type": "(PROCSET -> Str)",
+                    "kind": "OperEx",
+                    "oper": "Apalache!SetAsFun",
+                    "args": [
+                      {
+                        "type": "Set(<<PROCSET, Str>>)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "type": "<<PROCSET, Str>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p0_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "cs"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "<<PROCSET, Str>>",
+                            "kind": "OperEx",
+                            "oper": "TUPLE",
+                            "args": [
+                              {
+                                "type": "PROCSET",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "p1_OF_PROCSET"
+                                }
+                              },
+                              {
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "cs"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "PROCSET",
+                    "kind": "NameEx",
+                    "name": "turn"
+                  },
+                  {
+                    "type": "PROCSET",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "p0_OF_PROCSET"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "InvariantViolation",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "Apalache!Skolem",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EXISTS3",
+                "args": [
+                  {
+                    "type": "PROCSET",
+                    "kind": "NameEx",
+                    "name": "p$3"
+                  },
+                  {
+                    "type": "Set(PROCSET)",
+                    "kind": "NameEx",
+                    "name": "ProcSet"
+                  },
+                  {
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "Apalache!Skolem",
+                    "args": [
+                      {
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EXISTS3",
+                        "args": [
+                          {
+                            "type": "PROCSET",
+                            "kind": "NameEx",
+                            "name": "q$3"
+                          },
+                          {
+                            "type": "Set(PROCSET)",
+                            "kind": "NameEx",
+                            "name": "ProcSet"
+                          },
+                          {
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "AND",
+                            "args": [
+                              {
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "NOT",
+                                "args": [
+                                  {
+                                    "type": "Bool",
+                                    "kind": "OperEx",
+                                    "oper": "EQ",
+                                    "args": [
+                                      {
+                                        "type": "PROCSET",
+                                        "kind": "NameEx",
+                                        "name": "p$3"
+                                      },
+                                      {
+                                        "type": "PROCSET",
+                                        "kind": "NameEx",
+                                        "name": "q$3"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "AND",
+                                "args": [
+                                  {
+                                    "type": "Bool",
+                                    "kind": "OperEx",
+                                    "oper": "EQ",
+                                    "args": [
+                                      {
+                                        "type": "Str",
+                                        "kind": "OperEx",
+                                        "oper": "FUN_APP",
+                                        "args": [
+                                          {
+                                            "type": "(PROCSET -> Str)",
+                                            "kind": "NameEx",
+                                            "name": "pc"
+                                          },
+                                          {
+                                            "type": "PROCSET",
+                                            "kind": "NameEx",
+                                            "name": "p$3"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "Str",
+                                        "kind": "ValEx",
+                                        "value": {
+                                          "kind": "TlaStr",
+                                          "value": "cs"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Bool",
+                                    "kind": "OperEx",
+                                    "oper": "EQ",
+                                    "args": [
+                                      {
+                                        "type": "Str",
+                                        "kind": "OperEx",
+                                        "oper": "FUN_APP",
+                                        "args": [
+                                          {
+                                            "type": "(PROCSET -> Str)",
+                                            "kind": "NameEx",
+                                            "name": "pc"
+                                          },
+                                          {
+                                            "type": "PROCSET",
+                                            "kind": "NameEx",
+                                            "name": "q$3"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "Str",
+                                        "kind": "ValEx",
+                                        "value": {
+                                          "kind": "TlaStr",
+                                          "value": "cs"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

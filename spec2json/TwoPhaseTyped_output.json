@@ -1,0 +1,2328 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache.informal.systems/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "TwoPhaseTyped_output",
+      "declarations": [
+        {
+          "source": "UNKNOWN",
+          "type": "Set(RM)",
+          "kind": "TlaConstDecl",
+          "name": "RM"
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Set([rm: RM, type: Str])",
+          "kind": "TlaVarDecl",
+          "name": "msgs"
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(RM -> Str)",
+          "kind": "TlaVarDecl",
+          "name": "rmState"
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Str",
+          "kind": "TlaVarDecl",
+          "name": "tmState"
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "Set(RM)",
+          "kind": "TlaVarDecl",
+          "name": "tmPrepared"
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Set([rm: RM, type: Str]))",
+          "kind": "TlaOperDecl",
+          "name": "Message",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Set([rm: RM, type: Str])",
+            "kind": "OperEx",
+            "oper": "SET_UNION2",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Set([rm: RM, type: Str])",
+                "kind": "OperEx",
+                "oper": "SET_MAP",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "[rm: RM, type: Str]",
+                    "kind": "OperEx",
+                    "oper": "RECORD",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "type"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "t"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "rm"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "r"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "t"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(Str)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "Prepared"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "r"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Set([rm: RM, type: Str])",
+                "kind": "OperEx",
+                "oper": "SET_MAP",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "[rm: RM, type: Str]",
+                    "kind": "OperEx",
+                    "oper": "RECORD",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "type"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "t"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "t"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(Str)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "Commit"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "Abort"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "InitializeRM",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "EQ",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Set(RM)",
+                "kind": "OperEx",
+                "oper": "SET_ENUM",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r1_OF_RM"
+                    }
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r2_OF_RM"
+                    }
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "RM",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "r3_OF_RM"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Init",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "NameEx",
+                    "name": "rmState"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "FUN_CTOR",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "working"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "tmState"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "init"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "tmPrepared"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "NameEx",
+                    "name": "msgs"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "((RM) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TMRcvPrepared",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "rm",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "tmState"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "init"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "[rm: RM, type: Str]",
+                    "kind": "OperEx",
+                    "oper": "RECORD",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "type"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "Prepared"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "rm"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "NameEx",
+                    "name": "msgs"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "OperEx",
+                    "oper": "SET_UNION2",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "UNCHANGED",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "<<(RM -> Str), Str, Set([rm: RM, type: Str])>>",
+                    "kind": "OperEx",
+                    "oper": "TUPLE",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "tmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TMCommit",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "tmState"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "init"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "tmPrepared"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "tmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "committed"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "SET_UNION2",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "[rm: RM, type: Str]",
+                            "kind": "OperEx",
+                            "oper": "RECORD",
+                            "args": [
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "type"
+                                }
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "Commit"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "UNCHANGED",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "<<(RM -> Str), Set(RM)>>",
+                    "kind": "OperEx",
+                    "oper": "TUPLE",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TMAbort",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "tmState"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "init"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "tmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "aborted"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "SET_UNION2",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "[rm: RM, type: Str]",
+                            "kind": "OperEx",
+                            "oper": "RECORD",
+                            "args": [
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "type"
+                                }
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "Abort"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "UNCHANGED",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "<<(RM -> Str), Set(RM)>>",
+                    "kind": "OperEx",
+                    "oper": "TUPLE",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "((RM) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "RMPrepare",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "rm",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "OperEx",
+                    "oper": "FUN_APP",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "working"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "EXCEPT",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "<<RM>>",
+                        "kind": "OperEx",
+                        "oper": "TUPLE",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "prepared"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "OperEx",
+                    "oper": "SET_UNION2",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "[rm: RM, type: Str]",
+                            "kind": "OperEx",
+                            "oper": "RECORD",
+                            "args": [
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "type"
+                                }
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "Prepared"
+                                }
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "rm"
+                                }
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "RM",
+                                "kind": "NameEx",
+                                "name": "rm"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "UNCHANGED",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "<<Str, Set(RM)>>",
+                    "kind": "OperEx",
+                    "oper": "TUPLE",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "tmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "((RM) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "RMChooseToAbort",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "rm",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "OperEx",
+                    "oper": "FUN_APP",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "RM",
+                        "kind": "NameEx",
+                        "name": "rm"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaStr",
+                      "value": "working"
+                    }
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "EXCEPT",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "<<RM>>",
+                        "kind": "OperEx",
+                        "oper": "TUPLE",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "aborted"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "UNCHANGED",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "<<Str, Set(RM), Set([rm: RM, type: Str])>>",
+                    "kind": "OperEx",
+                    "oper": "TUPLE",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "tmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "((RM) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "RMRcvCommitMsg",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "rm",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "[rm: RM, type: Str]",
+                    "kind": "OperEx",
+                    "oper": "RECORD",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "type"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "Commit"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "NameEx",
+                    "name": "msgs"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "EXCEPT",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "<<RM>>",
+                        "kind": "OperEx",
+                        "oper": "TUPLE",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "committed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "UNCHANGED",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "<<Str, Set(RM), Set([rm: RM, type: Str])>>",
+                    "kind": "OperEx",
+                    "oper": "TUPLE",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "tmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "((RM) => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "RMRcvAbortMsg",
+          "formalParams": [
+            {
+              "kind": "OperParam",
+              "name": "rm",
+              "arity": 0
+            }
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "[rm: RM, type: Str]",
+                    "kind": "OperEx",
+                    "oper": "RECORD",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "type"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "Abort"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "NameEx",
+                    "name": "msgs"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "PRIME",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "OperEx",
+                    "oper": "EXCEPT",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(RM -> Str)",
+                        "kind": "NameEx",
+                        "name": "rmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "<<RM>>",
+                        "kind": "OperEx",
+                        "oper": "TUPLE",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "RM",
+                            "kind": "NameEx",
+                            "name": "rm"
+                          }
+                        ]
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "aborted"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "UNCHANGED",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "<<Str, Set(RM), Set([rm: RM, type: Str])>>",
+                    "kind": "OperEx",
+                    "oper": "TUPLE",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "NameEx",
+                        "name": "tmState"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "tmPrepared"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "NameEx",
+                        "name": "msgs"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TCConsistent",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "FORALL3",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "RM",
+                "kind": "NameEx",
+                "name": "rm1"
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Set(RM)",
+                "kind": "NameEx",
+                "name": "RM"
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "FORALL3",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "rm2"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "NOT",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "AND",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "EQ",
+                            "args": [
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "OperEx",
+                                "oper": "FUN_APP",
+                                "args": [
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm1"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "aborted"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "EQ",
+                            "args": [
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "OperEx",
+                                "oper": "FUN_APP",
+                                "args": [
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "(RM -> Str)",
+                                    "kind": "NameEx",
+                                    "name": "rmState"
+                                  },
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm2"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Str",
+                                "kind": "ValEx",
+                                "value": {
+                                  "kind": "TlaStr",
+                                  "value": "committed"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TPTypeOK",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(RM -> Str)",
+                    "kind": "NameEx",
+                    "name": "rmState"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set((RM -> Str))",
+                    "kind": "OperEx",
+                    "oper": "FUN_SET",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(Str)",
+                        "kind": "OperEx",
+                        "oper": "SET_ENUM",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "working"
+                            }
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "prepared"
+                            }
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "committed"
+                            }
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Str",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaStr",
+                              "value": "aborted"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Str",
+                    "kind": "NameEx",
+                    "name": "tmState"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(Str)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "init"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "committed"
+                        }
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Str",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "aborted"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "tmPrepared"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(Set(RM))",
+                    "kind": "OperEx",
+                    "oper": "SET_POWERSET",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set(RM)",
+                        "kind": "NameEx",
+                        "name": "RM"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "SET_IN",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set([rm: RM, type: Str])",
+                    "kind": "NameEx",
+                    "name": "msgs"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(Set([rm: RM, type: Str]))",
+                    "kind": "OperEx",
+                    "oper": "SET_POWERSET",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Set([rm: RM, type: Str])",
+                        "kind": "OperEx",
+                        "oper": "OPER_APP",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "(() => Set([rm: RM, type: Str]))",
+                            "kind": "NameEx",
+                            "name": "Message"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "Next",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "OR",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OR",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "OPER_APP",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(() => Bool)",
+                        "kind": "NameEx",
+                        "name": "TMCommit"
+                      }
+                    ]
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "OPER_APP",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "(() => Bool)",
+                        "kind": "NameEx",
+                        "name": "TMAbort"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EXISTS3",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "RM",
+                    "kind": "NameEx",
+                    "name": "rm"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Set(RM)",
+                    "kind": "NameEx",
+                    "name": "RM"
+                  },
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "AND",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "OR",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "OR",
+                            "args": [
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "OR",
+                                "args": [
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "Bool",
+                                    "kind": "OperEx",
+                                    "oper": "OPER_APP",
+                                    "args": [
+                                      {
+                                        "source": "UNKNOWN",
+                                        "type": "((RM) => Bool)",
+                                        "kind": "NameEx",
+                                        "name": "TMRcvPrepared"
+                                      },
+                                      {
+                                        "source": "UNKNOWN",
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "Bool",
+                                    "kind": "OperEx",
+                                    "oper": "OPER_APP",
+                                    "args": [
+                                      {
+                                        "source": "UNKNOWN",
+                                        "type": "((RM) => Bool)",
+                                        "kind": "NameEx",
+                                        "name": "RMPrepare"
+                                      },
+                                      {
+                                        "source": "UNKNOWN",
+                                        "type": "RM",
+                                        "kind": "NameEx",
+                                        "name": "rm"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "OPER_APP",
+                                "args": [
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "((RM) => Bool)",
+                                    "kind": "NameEx",
+                                    "name": "RMChooseToAbort"
+                                  },
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Bool",
+                            "kind": "OperEx",
+                            "oper": "OR",
+                            "args": [
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "OPER_APP",
+                                "args": [
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "((RM) => Bool)",
+                                    "kind": "NameEx",
+                                    "name": "RMRcvCommitMsg"
+                                  },
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm"
+                                  }
+                                ]
+                              },
+                              {
+                                "source": "UNKNOWN",
+                                "type": "Bool",
+                                "kind": "OperEx",
+                                "oper": "OPER_APP",
+                                "args": [
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "((RM) => Bool)",
+                                    "kind": "NameEx",
+                                    "name": "RMRcvAbortMsg"
+                                  },
+                                  {
+                                    "source": "UNKNOWN",
+                                    "type": "RM",
+                                    "kind": "NameEx",
+                                    "name": "rm"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "TPSpec",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OPER_APP",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(() => Bool)",
+                    "kind": "NameEx",
+                    "name": "Init"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "GLOBALLY",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "STUTTER",
+                    "args": [
+                      {
+                        "source": "UNKNOWN",
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "OPER_APP",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "(() => Bool)",
+                            "kind": "NameEx",
+                            "name": "Next"
+                          }
+                        ]
+                      },
+                      {
+                        "source": "UNKNOWN",
+                        "type": "<<(RM -> Str), Str, Set(RM), Set([rm: RM, type: Str])>>",
+                        "kind": "OperEx",
+                        "oper": "TUPLE",
+                        "args": [
+                          {
+                            "source": "UNKNOWN",
+                            "type": "(RM -> Str)",
+                            "kind": "NameEx",
+                            "name": "rmState"
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Str",
+                            "kind": "NameEx",
+                            "name": "tmState"
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Set(RM)",
+                            "kind": "NameEx",
+                            "name": "tmPrepared"
+                          },
+                          {
+                            "source": "UNKNOWN",
+                            "type": "Set([rm: RM, type: Str])",
+                            "kind": "NameEx",
+                            "name": "msgs"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source": "UNKNOWN",
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "P",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "source": "UNKNOWN",
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OPER_APP",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(() => Bool)",
+                    "kind": "NameEx",
+                    "name": "TPTypeOK"
+                  }
+                ]
+              },
+              {
+                "source": "UNKNOWN",
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OPER_APP",
+                "args": [
+                  {
+                    "source": "UNKNOWN",
+                    "type": "(() => Bool)",
+                    "kind": "NameEx",
+                    "name": "TCConsistent"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

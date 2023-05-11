@@ -1,0 +1,46 @@
+{
+  "#meta": {
+    "format": "ITF",
+    "varTypes": {
+      "rmState": "(RM -> Str)"
+    },
+    "format-description": "https://apalache.informal.systems/docs/adr/015adr-trace.html",
+    "description": "Created by Apalache on Fri May 05 23:54:29 CST 2023"
+  },
+  "params": [
+    "RM"
+  ],
+  "vars": [
+    "rmState"
+  ],
+  "states": [
+    {
+      "#meta": {
+        "index": 0
+      },
+      "RM": {
+        "#set": [
+          "r1_OF_RM",
+          "r2_OF_RM",
+          "r3_OF_RM"
+        ]
+      },
+      "rmState": {
+        "#map": [
+          [
+            "r1_OF_RM",
+            "prepared"
+          ],
+          [
+            "r2_OF_RM",
+            "prepared"
+          ],
+          [
+            "r3_OF_RM",
+            "working"
+          ]
+        ]
+      }
+    }
+  ]
+}

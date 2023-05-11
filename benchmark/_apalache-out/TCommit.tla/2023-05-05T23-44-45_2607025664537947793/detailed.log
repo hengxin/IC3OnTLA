@@ -1,0 +1,15 @@
+2023-05-05T23:44:45,460 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-05T23:44:45,500 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=false
+2023-05-05T23:44:45,804 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-05T23:44:46,032 [main] ERROR a.f.a.t.p.i.SanyParserPassImpl - Parsing error: *** Errors: 1
+
+line 64, col 22 to line 64, col 29 of module TCommit
+
+Unknown operator: `TCTypeOK'.
+
+
+
+2023-05-05T23:44:46,068 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [FAIL]
+2023-05-05T23:44:46,069 [main] INFO  a.f.a.t.Tool$ - Checker has found an error
+2023-05-05T23:44:46,070 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  0 sec
+2023-05-05T23:44:46,070 [main] INFO  a.f.a.t.Tool$ - Total time: 0.605 sec

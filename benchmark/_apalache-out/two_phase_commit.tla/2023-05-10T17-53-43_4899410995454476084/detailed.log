@@ -1,0 +1,15 @@
+2023-05-10T17:53:43,536 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-10T17:53:43,574 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=true
+2023-05-10T17:53:43,839 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-10T17:53:44,046 [main] ERROR a.f.a.t.p.i.SanyParserPassImpl - Parsing error: *** Errors: 1
+
+line 120, col 26 to line 120, col 30 of module two_phase_commit
+
+Unknown operator: `Inv_0'.
+
+
+
+2023-05-10T17:53:44,088 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [FAIL]
+2023-05-10T17:53:44,088 [main] INFO  a.f.a.t.Tool$ - Checker has found an error
+2023-05-10T17:53:44,089 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  0 sec
+2023-05-10T17:53:44,089 [main] INFO  a.f.a.t.Tool$ - Total time: 0.548 sec

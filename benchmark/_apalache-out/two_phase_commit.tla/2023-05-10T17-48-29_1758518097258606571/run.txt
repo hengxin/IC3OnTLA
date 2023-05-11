@@ -1,0 +1,1 @@
+ check --length=1 --write-intermediate=true --cinit=InitializeNODE --output-traces --init=Init --inv=P two_phase_commit.tla

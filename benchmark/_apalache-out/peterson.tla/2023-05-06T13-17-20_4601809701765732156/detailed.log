@@ -1,0 +1,38 @@
+2023-05-06T13:17:20,644 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-06T13:17:20,673 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=false
+2023-05-06T13:17:20,992 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-06T13:17:21,678 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [OK]
+2023-05-06T13:17:21,679 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat
+2023-05-06T13:17:21,679 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Running Snowcat .::.
+2023-05-06T13:17:22,193 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > Your types are purrfect!
+2023-05-06T13:17:22,193 [main] INFO  a.f.a.t.p.t.EtcTypeCheckerPassImpl -  > All expressions are typed
+2023-05-06T13:17:22,240 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #1: TypeCheckerSnowcat [OK]
+2023-05-06T13:17:22,241 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #2: ConfigurationPass
+2023-05-06T13:17:22,246 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the initialization predicate to Init
+2023-05-06T13:17:22,246 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the transition predicate to Next
+2023-05-06T13:17:22,247 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the constant initialization predicate to InitializePROCSET
+2023-05-06T13:17:22,248 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - Adapted exception intercepted: 
+at.forsyte.apalache.io.ConfigurationError: Operator InitializePROCSET not found (used as the constant initialization predicate)
+	at at.forsyte.apalache.tla.passes.pp.ConfigurationPassImpl.assertDecl$1(ConfigurationPassImpl.scala:186)
+	at at.forsyte.apalache.tla.passes.pp.ConfigurationPassImpl.$anonfun$ensureDeclarationsArePresent$2(ConfigurationPassImpl.scala:195)
+	at at.forsyte.apalache.tla.passes.pp.ConfigurationPassImpl.$anonfun$ensureDeclarationsArePresent$2$adapted(ConfigurationPassImpl.scala:195)
+	at scala.Option.foreach(Option.scala:437)
+	at at.forsyte.apalache.tla.passes.pp.ConfigurationPassImpl.ensureDeclarationsArePresent(ConfigurationPassImpl.scala:195)
+	at at.forsyte.apalache.tla.passes.pp.ConfigurationPassImpl.execute(ConfigurationPassImpl.scala:69)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.exec(PassChainExecutor.scala:64)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.$anonfun$runPassOnModule$3(PassChainExecutor.scala:53)
+	at scala.util.Either.flatMap(Either.scala:352)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.$anonfun$runPassOnModule$1(PassChainExecutor.scala:51)
+	at scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)
+	at scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)
+	at scala.collection.immutable.List.foldLeft(List.scala:79)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.runOnPasses(PassChainExecutor.scala:44)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$.run(PassChainExecutor.scala:34)
+	at at.forsyte.apalache.tla.tooling.opt.CheckCmd.run(CheckCmd.scala:132)
+	at at.forsyte.apalache.tla.Tool$.runCommand(Tool.scala:138)
+	at at.forsyte.apalache.tla.Tool$.run(Tool.scala:118)
+	at at.forsyte.apalache.tla.Tool$.main(Tool.scala:40)
+	at at.forsyte.apalache.tla.Tool.main(Tool.scala)
+2023-05-06T13:17:22,251 [main] ERROR a.f.a.t.Tool$ - Configuration error (see the manual): Operator InitializePROCSET not found (used as the constant initialization predicate)
+2023-05-06T13:17:22,251 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  1 sec
+2023-05-06T13:17:22,251 [main] INFO  a.f.a.t.Tool$ - Total time: 1.604 sec

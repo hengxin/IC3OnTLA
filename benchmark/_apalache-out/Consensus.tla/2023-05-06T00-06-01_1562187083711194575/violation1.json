@@ -1,0 +1,184 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache.informal.systems/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "counterexample",
+      "declarations": [
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "ConstInit",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "Value"
+                  },
+                  {
+                    "type": "Set(VALUE)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "type": "VALUE",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "v1_OF_VALUE"
+                        }
+                      },
+                      {
+                        "type": "VALUE",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "v2_OF_VALUE"
+                        }
+                      },
+                      {
+                        "type": "VALUE",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "v3_OF_VALUE"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "State0",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "Value"
+                  },
+                  {
+                    "type": "Set(VALUE)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      {
+                        "type": "VALUE",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "v1_OF_VALUE"
+                        }
+                      },
+                      {
+                        "type": "VALUE",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "v2_OF_VALUE"
+                        }
+                      },
+                      {
+                        "type": "VALUE",
+                        "kind": "ValEx",
+                        "value": {
+                          "kind": "TlaStr",
+                          "value": "v3_OF_VALUE"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "chosen"
+                  },
+                  {
+                    "type": "Set(VALUE)",
+                    "kind": "OperEx",
+                    "oper": "SET_ENUM",
+                    "args": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "InvariantViolation",
+          "formalParams": [
+            
+          ],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "SET_IN",
+            "args": [
+              {
+                "type": "Set(VALUE)",
+                "kind": "NameEx",
+                "name": "chosen"
+              },
+              {
+                "type": "Set(Set(VALUE))",
+                "kind": "OperEx",
+                "oper": "SET_POWERSET",
+                "args": [
+                  {
+                    "type": "Set(VALUE)",
+                    "kind": "NameEx",
+                    "name": "Value"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

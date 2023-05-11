@@ -1,0 +1,15 @@
+2023-05-06T00:03:29,762 [main] INFO  a.f.a.t.Tool$ - # APALACHE version: 78fed1a | build: 78fed1a
+2023-05-06T00:03:29,794 [main] INFO  a.f.a.t.t.o.CheckCmd - Tuning: search.outputTraces=true
+2023-05-06T00:03:30,045 [main] INFO  a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser
+2023-05-06T00:03:30,175 [main] ERROR a.f.a.t.p.i.SanyParserPassImpl - Parsing error: *** Abort messages: 1
+
+In module Consensus
+
+Could not parse module Consensus from file /Users/fruitfighter/Desktop/IC3onTLA+/benchmark/Consensus.tla
+
+
+
+2023-05-06T00:03:30,206 [main] DEBUG a.f.a.i.p.PassChainExecutor$ - PASS #0: SanyParser [FAIL]
+2023-05-06T00:03:30,207 [main] INFO  a.f.a.t.Tool$ - Checker has found an error
+2023-05-06T00:03:30,207 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  0 sec
+2023-05-06T00:03:30,207 [main] INFO  a.f.a.t.Tool$ - Total time: 0.441 sec
